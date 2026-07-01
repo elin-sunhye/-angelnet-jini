@@ -1,0 +1,84 @@
+@import './common.css';
+
+/* 헤더 푸터 ------------------------------------------------------- */
+header,
+footer {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 7.5rem;
+  padding: 1rem 3rem;
+  color: var(--white);
+  background-color: var(--navy);
+}
+/* 헤더 */
+header {
+  justify-content: space-between;
+}
+header .user_box {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+/* 푸터 */
+footer {
+  justify-content: flex-end;
+  height: 4.5rem;
+}
+/* ------------------------------------------------------- */
+
+/* 사이드바 ------------------------------------------------------- */
+aside {
+  width: 25rem;
+  height: 100%;
+  padding: 2rem;
+  background-color: var(--white);
+  box-shadow: 0.6rem 0 1.5rem rgba(0, 0, 0, 0.1);
+}
+/* 캘린더 */
+aside .calendar_box {
+  width: 100%;
+  height: 33rem;
+}
+aside .calendar_box .btn_add_calendar {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 3.6rem;
+  background-color: var(--primary);
+}
+/* 네비 */
+aside nav {
+  width: 100%;
+  height: calc(100% - 33rem);
+  overflow-y: auto;
+}
+aside nav li,
+aside nav li a {
+  display: inline-block;
+  width: 100%;
+}
+aside nav li:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+aside nav li a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  font-size: 2rem;
+  color: var(--muted);
+}
+aside nav li.active a {
+  font-weight: 900;
+  border-left: 0.4rem solid var(--primary);
+  color: var(--navy);
+  background-color: var(--blue-1);
+}
+aside nav li a span {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--red);
+}
+/* ------------------------------------------------------- */

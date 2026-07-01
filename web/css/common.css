@@ -1,0 +1,33 @@
+@import './reset.css';
+:root {
+  --white: #fff;
+  --black: #111;
+  --primary: #248cd7;
+  --navy: #0b073a;
+  --blue-1: #f2f5fa;
+  --blue-2: #e9f4fb;
+  --muted: #94a3b8;
+  --red: red;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap {
+  flex: 1;
+  gap: 1rem;
+  width: 100vw;
+  height: calc(100% - 75px - 45px);
+  background-color: var(--blue-1);
+}
+
+.flex {
+  display: flex;
+}
+
+#container {
+  flex: 1;
+  padding: 2rem;
+}
