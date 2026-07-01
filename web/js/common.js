@@ -2,9 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   fetch('comp-header.html')
     .then((response) => response.text())
-    .then((data) => {
-      document.getElementById('compHeader').innerHTML = data;
-    });
+    .then((data) => (document.getElementById('compHeader').innerHTML = data));
 });
 
 // 푸터 컴포넌트 로드
@@ -22,6 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
     .then((response) => response.text())
     .then((data) => {
       document.getElementById('compSidebar').innerHTML = data;
+
+      // 사이드바가 들어간 후 active 처리
+      setActiveMenu();
     });
 });
 
@@ -32,15 +33,13 @@ function setActiveMenu() {
   const menuItems = document.querySelectorAll('#compSidebar nav li');
   const menuLinks = document.querySelectorAll('#compSidebar nav a');
 
-  menuItems.forEach((li) => {
-    li.classList.remove('active');
-  });
+  menuItems.forEach((li) => li.classList.remove('active'));
 
   menuLinks.forEach((a) => {
     const href = a.getAttribute('href');
     const linkPage = href.split('/').pop();
 
-    if (currentPage === linkPage) {
+    if (currentPage == linkPage) {
       a.closest('li').classList.add('active');
     }
   });
