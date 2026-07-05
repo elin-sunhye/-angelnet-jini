@@ -369,25 +369,3 @@ document.addEventListener('click', (event) => {
   window.history.pushState({}, '', url);
 });
 // -------------------------------------------------------
-
-// select -------------------------------------------------------
-// 값 선택 완료 시 포커스 해제 (닫힘 처리 확정)
-document.addEventListener('change', (event) => {
-  const select = event.target.closest('.select_box select');
-
-  if (!select) return;
-
-  select.blur();
-});
-
-// Esc로 드롭다운만 닫고 값은 안 바꿨을 때 포커스 해제
-document.addEventListener('keydown', (event) => {
-  if (event.key !== 'Escape') return;
-
-  const select = event.target.closest('.select_box select');
-
-  if (!select) return;
-
-  select.blur();
-});
-// -------------------------------------------------------
