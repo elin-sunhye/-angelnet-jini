@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WORK</title>
+    <title>업무관리</title>
     <link rel="stylesheet" href="./css/comp-style.css" />
+    <link rel="stylesheet" href="./css/work.css" />
     <script src="./js/jquery.3.1.1.js"></script>
     <script src="./js/common.js"></script>
   </head>
@@ -16,43 +17,115 @@
       <!-- 사이드바 컴포넌트 -->
       <div id="compSidebar"></div>
       <!-- 페이지 내용 -->
-      <div id="container">
-        <table>
-          <colgroup>
-            <col width="20%" />
-            <col width="40%" />
-            <col width="40%" />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>코드</th>
-              <th>사원명</th>
-              <th>근무구분</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>01</td>
-              <td>박이사</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>01</td>
-              <td>박이사</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>01</td>
-              <td>박이사</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>01</td>
-              <td>박이사</td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+      <div id="container" class="flex">
+        <!-- 좌 리스트 컴포넌트 -->
+        <div id="compLeftList"></div>
+
+        <!-- 우 내용 -->
+        <div class="contants">
+          <!-- 텝 컴포넌트 -->
+          <div id="compTab"></div>
+
+          <!-- 탭 내용 -->
+          <div class="tab_content_wrap">
+            <!-- 일일업무 -->
+            <div class="tab_content" data-tab-content="01">
+              <table>
+                <colgroup class="list_colgroup">
+                  <col width="10%" />
+                  <col width="10%" />
+                  <col width="10%" />
+                  <col width="10%" />
+                  <col width="60%" />
+                </colgroup>
+
+                <thead>
+                  <tr class="list_header">
+                    <th>구분</th>
+                    <th>코드</th>
+                    <th>업체명</th>
+                    <th>시간</th>
+                    <th>내용</th>
+                  </tr>
+                </thead>
+
+                <tbody class="list_body">
+                  <tr class="tr_insert">
+                    <td>
+                      <div class="select_box">
+                        <select name="category" title="구분 선택">
+                          <option value="1" selected>방문</option>
+                          <option value="2">상담</option>
+                        </select>
+                      </div>
+                    </td>
+                    <td>
+                      <input type="text" name="productName" title="코드" />
+                    </td>
+                    <td>검색 팝업</td>
+                    <td>
+                      <input type="time" name="time" title="시간" />
+                    </td>
+                    <td>
+                      <input type="text" name="remark" title="비고 입력" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>방문</p>
+                    </td>
+                    <td>
+                      <p>01789</p>
+                    </td>
+                    <td>검색 팝업</td>
+                    <td>
+                      <p>09:00</p>
+                    </td>
+                    <td>
+                      <p>냉동고 1대 추가, 냉장고 3대 추가</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>방문</p>
+                    </td>
+                    <td>
+                      <p>01789</p>
+                    </td>
+                    <td>검색 팝업</td>
+                    <td>
+                      <p>09:00</p>
+                    </td>
+                    <td>
+                      <p>냉동고 1대 추가, 냉장고 3대 추가</p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>상담</p>
+                    </td>
+                    <td>
+                      <p>01789</p>
+                    </td>
+                    <td>검색 팝업</td>
+                    <td>
+                      <p>09:00</p>
+                    </td>
+                    <td>
+                      <p>냉동고 1대 추가, 냉장고 3대 추가</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- 일정관리 -->
+            <div class="tab_content" data-tab-content="02">일정관리</div>
+            <!-- 운행일지 -->
+            <div class="tab_content" data-tab-content="03">운행일지</div>
+            <!-- 채권관리 -->
+            <div class="tab_content" data-tab-content="04">채권관리</div>
+          </div>
+        </div>
       </div>
     </div>
 

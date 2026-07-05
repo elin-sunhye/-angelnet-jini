@@ -1,0 +1,22 @@
+/* 초기화 ------------------------------------------------------- */
+.tab_content_wrap .tab_content {
+  display: none;
+}
+/* ------------------------------------------------------- */
+
+/* 탭 내용 ------------------------------------------------------- */
+.tab_content table .tr_insert {
+  background-color: var(--yellow-03);
+}
+
+/* data-tab-content='01' */
+.tab_content[data-tab-content='01'] table {
+  border-top: 0 !important;
+}
+.tab_content[data-tab-content='01'] table tbody tr td select {
+  text-align: center;
+}
+.tab_content[data-tab-content='01'] table tbody tr td:last-of-type {
+  text-align: left;
+}
+/* ------------------------------------------------------- */

@@ -1,0 +1,14 @@
+{
+  "columns": [
+    { "key": "code", "label": "코드" },
+    { "key": "employeeName", "label": "사원명" },
+    { "key": "workType", "label": "근무구분" }
+  ],
+  "rows": [
+    { "code": "01", "employeeName": "박이사", "workType": "" },
+    { "code": "02", "employeeName": "김대리", "workType": "외근" },
+    { "code": "03", "employeeName": "이과장", "workType": "반차" },
+    { "code": "04", "employeeName": "최차장", "workType": "" },
+    { "code": "05", "employeeName": "안실장", "workType": "연차" }
+  ]
+}

@@ -1,0 +1,87 @@
+/* 타아틀 */
+.fc .fc-toolbar.fc-header-toolbar {
+  margin-bottom: 1.2rem;
+  cursor: default;
+}
+.fc .fc-toolbar-title {
+  font-size: 1.6rem;
+}
+/* 이전 다음 달 버튼 및 클릭 효과 제거 */
+.fc .fc-button-group > .fc-button,
+.fc .fc-button-group > .fc-button:hover,
+.fc .fc-button-group > .fc-button:active,
+.fc .fc-button-group > .fc-button:focus,
+.fc .fc-button-group > .fc-button:focus-visible,
+.fc .fc-button-group > .fc-button.fc-button-active,
+.fc .fc-button-group > .fc-button:not(:disabled):active {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  box-shadow: none;
+  background: transparent;
+  background-color: transparent;
+}
+/* 이전 다음 달 버튼 아이콘 */
+.fc .fc-button-group > .fc-button span {
+  font-size: 1.5rem;
+  color: var(--black);
+}
+/* 달력 컨텐츠 */
+.fc-dayGridMonth-view.fc-view.fc-daygrid,
+.fc .fc-scroller-harness,
+.fc-scroller,
+.fc .fc-daygrid-body,
+.fc-scrollgrid-sync-table {
+  height: 100% !important;
+}
+.fc .fc-scrollgrid-section,
+.fc .fc-scrollgrid-section table,
+.fc .fc-scrollgrid-section > td {
+  height: unset;
+}
+.fc-scrollgrid-section.fc-scrollgrid-section-header.fc-scrollgrid-section-sticky {
+  height: 3rem;
+}
+.fc-theme-standard .fc-scrollgrid {
+  height: 100%;
+  border: 0;
+}
+.fc .fc-scrollgrid-section-sticky > *,
+.fc-theme-standard th,
+.fc-theme-standard td {
+  font-size: 1.3rem;
+  border: 0;
+  background-color: transparent;
+  cursor: default;
+}
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events,
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-bg {
+  display: none;
+}
+/* 토요일 */
+aside .calendar_box .calendar .is-saturday .fc-daygrid-day-number,
+aside .calendar_box .calendar .is-saturday .fc-col-header-cell-cushion {
+  color: var(--primary);
+}
+
+/* 일요일 */
+aside .calendar_box .calendar .is-sunday .fc-daygrid-day-number,
+aside .calendar_box .calendar .is-sunday .fc-col-header-cell-cushion {
+  color: var(--red);
+}
+/* 날짜 */
+.fc .fc-daygrid-day-frame {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fc .fc-daygrid-day-top {
+  display: block;
+}
+/* today */
+.fc .fc-daygrid-day.is-sunday.fc-day-today .fc-daygrid-day-number,
+.fc .fc-daygrid-day.is-saturday.fc-day-today .fc-daygrid-day-number,
+.fc .fc-daygrid-day.fc-day-today {
+  color: var(--white) !important;
+  background-color: var(--primary);
+}
