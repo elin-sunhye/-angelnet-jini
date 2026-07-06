@@ -19,4 +19,15 @@
 .tab_content[data-tab-content='01'] table tbody tr td:last-of-type {
   text-align: left;
 }
+
+.popup_search_biz .pop_cont .inp_box {
+  height: 4rem;
+}
+.popup_search_biz .pop_cont .scroll_box {
+  height: 50rem;
+  overflow: auto;
+}
+.popup_search_biz .pop_cont .table_biz {
+  margin-top: 1rem;
+}
 /* ------------------------------------------------------- */

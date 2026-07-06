@@ -91,10 +91,7 @@ table:not(aside .calendar_box .calendar table) tbody tr td {
 table tbody tr.tr_insert td {
   padding: 0.5rem !important;
 }
-
-table tbody tr td input,
-table tbody tr td input:hover,
-table tbody tr td input:focus,
+table tbody tr td .inp_box,
 table tbody tr td input:active,
 table tbody tr td textarea,
 table tbody tr td textarea:hover,
@@ -107,15 +104,38 @@ table tbody tr td select:active,
 table tbody tr td button,
 table tbody tr td button:hover,
 table tbody tr td button:focus,
-table tbody tr td button:active {
+table tbody tr td button:active,
+[class^='popup_'] .pop_cont .inp_box,
+[class^='popup_'] .pop_cont textarea,
+[class^='popup_'] .pop_cont textarea:hover,
+[class^='popup_'] .pop_cont textarea:focus,
+[class^='popup_'] .pop_cont textarea:active,
+[class^='popup_'] .pop_cont select,
+[class^='popup_'] .pop_cont select:hover,
+[class^='popup_'] .pop_cont select:focus,
+[class^='popup_'] .pop_cont select:active,
+[class^='popup_'] .pop_cont button,
+[class^='popup_'] .pop_cont button:hover,
+[class^='popup_'] .pop_cont button:focus,
+[class^='popup_'] .pop_cont button:active,
+[class*=' popup_'] .pop_cont .inp_box,
+[class*=' popup_'] .pop_cont textarea,
+[class*=' popup_'] .pop_cont textarea:hover,
+[class*=' popup_'] .pop_cont textarea:focus,
+[class*=' popup_'] .pop_cont textarea:active,
+[class*=' popup_'] .pop_cont select,
+[class*=' popup_'] .pop_cont select:hover,
+[class*=' popup_'] .pop_cont select:focus,
+[class*=' popup_'] .pop_cont select:active,
+[class*=' popup_'] .pop_cont button,
+[class*=' popup_'] .pop_cont button:hover,
+[class*=' popup_'] .pop_cont button:focus,
+[class*=' popup_'] .pop_cont button:active {
   width: 100%;
   height: 100%;
   padding: 1rem;
 }
-table tbody tr.tr_insert td input,
-table tbody tr.tr_insert td input:hover,
-table tbody tr.tr_insert td input:focus,
-table tbody tr.tr_insert td input:active,
+table tbody tr.tr_insert td .inp_box,
 table tbody tr.tr_insert td textarea,
 table tbody tr.tr_insert td textarea:hover,
 table tbody tr.tr_insert td textarea:focus,
@@ -124,13 +144,171 @@ table tbody tr.tr_insert td .select_box,
 table tbody tr.tr_insert td button,
 table tbody tr.tr_insert td button:hover,
 table tbody tr.tr_insert td button:focus,
-table tbody tr.tr_insert td button:active {
+table tbody tr.tr_insert td button:active,
+[class^='popup_'] .pop_cont .inp_box,
+[class^='popup_'] .pop_cont textarea,
+[class^='popup_'] .pop_cont textarea:hover,
+[class^='popup_'] .pop_cont textarea:focus,
+[class^='popup_'] .pop_cont textarea:active,
+[class^='popup_'] .pop_cont .select_box,
+[class^='popup_'] .pop_cont button,
+[class^='popup_'] .pop_cont button:hover,
+[class^='popup_'] .pop_cont button:focus,
+[class^='popup_'] .pop_cont button:active,
+[class*=' popup_'] .pop_cont .inp_box,
+[class*=' popup_'] .pop_cont textarea,
+[class*=' popup_'] .pop_cont textarea:hover,
+[class*=' popup_'] .pop_cont textarea:focus,
+[class*=' popup_'] .pop_cont textarea:active,
+[class*=' popup_'] .pop_cont .select_box,
+[class*=' popup_'] .pop_cont button,
+[class*=' popup_'] .pop_cont button:hover,
+[class*=' popup_'] .pop_cont button:focus,
+[class*=' popup_'] .pop_cont button:active {
   border: 0.1rem solid #ccc;
 }
-table tbody tr.tr_insert td .select_box {
+table tbody tr.tr_insert td .select_box,
+table tbody tr.tr_insert td .inp_box {
   width: 100%;
   height: 100%;
 }
 .select_box {
   padding-right: 1rem;
+}
+
+.inp_box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+}
+.inp_box input {
+  width: 100%;
+  height: 100%;
+}
+.inp_box button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem !important;
+  aspect-ratio: 1 / 1;
+  padding: 0 !important;
+  border: 0 !important;
+}
+.inp_box button img {
+  height: 100%;
+}
+
+/* 버튼 공통 */
+/* 선택 */
+.btn_select {
+  background: var(--primary);
+  border: 0.1rem solid var(--primary);
+  color: var(--white);
+}
+
+.btn_select:hover {
+  background: var(--blue-2);
+  color: var(--primary);
+}
+
+/* 확인 */
+.btn_confirm {
+  background: var(--gray-5);
+  border: 0.1rem solid var(--gray-5);
+  color: var(--white);
+}
+
+.btn_confirm:hover {
+  background: var(--gray-1);
+  color: var(--gray-5);
+}
+
+/* 승인 */
+.btn_approve {
+  background: var(--green);
+  border: 0.1rem solid var(--green);
+  color: var(--white);
+}
+
+.btn_approve:hover {
+  background: var(--green-02);
+  color: var(--green);
+}
+
+/* 반려 */
+.btn_reject {
+  background: var(--red);
+  border: 0.1rem solid var(--red);
+  color: var(--white);
+}
+
+.btn_reject:hover {
+  background: var(--red-02);
+  color: var(--red);
+}
+
+/* 보류 */
+.btn_hold {
+  background: var(--yellow);
+  border: 0.1rem solid var(--yellow);
+  color: var(--white);
+}
+
+.btn_hold:hover {
+  background: var(--yellow-02);
+  color: var(--yellow);
+}
+
+[class^='popup_'],
+[class*=' popup_'] {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+}
+[class^='popup_'] .inner_box,
+[class*=' popup_'] .inner_box {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  min-width: 50rem;
+  max-width: 30vw;
+  min-height: 50rem;
+  max-height: 80vh;
+  width: 100%;
+  padding: 2rem;
+  background-color: var(--white);
+  box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
+}
+[class^='popup_'] .pop_top_title,
+[class*=' popup_'] .pop_top_title {
+  justify-content: space-between;
+}
+[class^='popup_'] .pop_top_title h6,
+[class*=' popup_'] .pop_top_title h6 {
+  font-size: 2rem;
+}
+[class^='popup_'] .pop_cont,
+[class*=' popup_'] .pop_cont {
+  flex: 1;
+  margin: 2rem 0 1rem;
+  overflow-y: auto;
+}
+[class^='popup_'] .pop_bottom_btn,
+[class*=' popup_'] .pop_bottom_btn {
+  justify-content: center;
+  gap: 1rem;
+}
+[class^='popup_'] .pop_bottom_btn button,
+[class*=' popup_'] .pop_bottom_btn button {
+  flex: 1;
+  height: 3.6rem;
 }

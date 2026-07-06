@@ -80,16 +80,6 @@ input:active {
   background-color: transparent;
 }
 
-/* select, option */
-select {
-  cursor: pointer;
-  /* 커스텀 화살표 */
-  background-image: url('../img/select-arrow.svg');
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1.2rem;
-}
-
 /* 버튼처럼 클릭 가능한 요소 */
 button,
 select,

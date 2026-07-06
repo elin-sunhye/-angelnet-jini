@@ -16,6 +16,7 @@
     <div class="wrap flex">
       <!-- 사이드바 컴포넌트 -->
       <div id="compSidebar"></div>
+
       <!-- 페이지 내용 -->
       <div id="container" class="flex">
         <!-- 좌 리스트 컴포넌트 -->
@@ -34,9 +35,9 @@
                 <colgroup class="list_colgroup">
                   <col width="10%" />
                   <col width="10%" />
+                  <col width="20%" />
                   <col width="10%" />
-                  <col width="10%" />
-                  <col width="60%" />
+                  <col width="50%" />
                 </colgroup>
 
                 <thead>
@@ -60,14 +61,20 @@
                       </div>
                     </td>
                     <td>
-                      <input type="text" name="productName" title="코드" />
+                      <div class="inp_box">
+                        <input type="text" name="code" title="코드" />
+                      </div>
                     </td>
                     <td>검색 팝업</td>
                     <td>
-                      <input type="time" name="time" title="시간" />
+                      <div class="inp_box">
+                        <input type="time" name="time" title="시간" />
+                      </div>
                     </td>
                     <td>
-                      <input type="text" name="remark" title="비고 입력" />
+                      <div class="inp_box">
+                        <input type="text" name="remark" title="비고 입력" />
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -124,6 +131,212 @@
             <div class="tab_content" data-tab-content="03">운행일지</div>
             <!-- 채권관리 -->
             <div class="tab_content" data-tab-content="04">채권관리</div>
+          </div>
+        </div>
+
+        <!-- 팝업 -->
+        <div class="popup_search_biz">
+          <div class="inner_box">
+            <!-- 상단 제목 영역 -->
+            <div class="pop_top_title flex">
+              <h6>업체 검색</h6>
+              <button type="button" class="btn_close" aria-label="팝업 닫기">
+                <img src="./img/ico-close.svg" alt="" />
+              </button>
+            </div>
+
+            <!-- 본문 영역 -->
+            <div class="pop_cont">
+              <div class="inp_box">
+                <input type="text" name="bizNm" title="업체명" />
+                <button type="button" class="btn_search" aria-label="검색">
+                  <img src="./img/ico-search.svg" alt="" />
+                </button>
+              </div>
+
+              <!-- 업체 리스트 -->
+              <div class="scroll_box">
+                <table class="table_biz">
+                  <colgroup>
+                    <col width="25%" />
+                    <col width="25%" />
+                    <col width="25%" />
+                    <col width="25%" />
+                  </colgroup>
+                  <thead>
+                    <tr>
+                      <th>코드</th>
+                      <th>업체명</th>
+                      <th>사업자번호</th>
+                      <th>주소</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                    <tr>
+                      <td>0155</td>
+                      <td>맛나 치킨</td>
+                      <td></td>
+                      <td>서울시 강남구</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- 하단 버튼 영역 -->
+            <div class="pop_bottom_btn flex">
+              <button type="button" class="btn_select">선택</button>
+            </div>
           </div>
         </div>
       </div>

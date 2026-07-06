@@ -1,0 +1,40 @@
+{
+  "columns": [
+    { "key": "code", "label": "코드" },
+    { "key": "bizNm", "label": "업체명" },
+    { "key": "bizNum", "label": "사업자번호" },
+    { "key": "addr", "label": "주소" }
+  ],
+  "rows": [
+    {
+      "code": "0451",
+      "bizNm": "맛나 치킨",
+      "bizNum": "",
+      "addr": "서울시 강남구"
+    },
+    {
+      "code": "1602",
+      "bizNm": "백가 식당",
+      "bizNum": "외근",
+      "addr": "서울시 강남구"
+    },
+    {
+      "code": "05273",
+      "bizNm": "궁물촌",
+      "bizNum": "반차",
+      "addr": "서울시 강남구"
+    },
+    {
+      "code": "0542",
+      "bizNm": "강남 노래방",
+      "bizNum": "",
+      "addr": "서울시 강남구"
+    },
+    {
+      "code": "29905",
+      "bizNm": "한식 맛집",
+      "bizNum": "연차",
+      "addr": "서울시 강남구"
+    }
+  ]
+}
