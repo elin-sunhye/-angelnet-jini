@@ -19,6 +19,41 @@
 .tab_content[data-tab-content='01'] table tbody tr td:last-of-type {
   text-align: left;
 }
+.tab_content[data-tab-content='01'] table tbody tr td .search_biz_nm_box,
+.tab_content[data-tab-content='01'] table tbody tr td .search_biz_nm_box * {
+  cursor: pointer;
+}
+.tab_content[data-tab-content='01'] table tbody tr td .search_biz_nm_box {
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--gray-3);
+  padding: 0 1rem;
+}
+.tab_content[data-tab-content='01']
+  table
+  tbody
+  tr
+  td
+  .search_biz_nm_box
+  .inp_box,
+.tab_content[data-tab-content='01']
+  table
+  tbody
+  tr
+  td
+  .search_biz_nm_box
+  button {
+  border: 0;
+}
+.tab_content[data-tab-content='01']
+  table
+  tbody
+  tr
+  td
+  .search_biz_nm_box
+  button {
+  width: fit-content;
+}
 
 .popup_search_biz .pop_cont .inp_box {
   height: 4rem;
@@ -30,4 +65,7 @@
 .popup_search_biz .pop_cont .table_biz {
   margin-top: 1rem;
 }
+
+/* data-tab-content='02' */
+
 /* ------------------------------------------------------- */

@@ -82,16 +82,26 @@ input:active {
 
 /* 버튼처럼 클릭 가능한 요소 */
 button,
+button *,
 select,
+select *,
 label,
+label *,
 input[type='button'],
+input[type='button'] *,
 input[type='submit'],
+input[type='submit'] *,
 input[type='reset'],
+input[type='reset'] *,
 input[type='checkbox'],
+input[type='checkbox'] *,
 input[type='radio'],
+input[type='radio'] *,
 input[type='time'],
-input[type='date'] {
-  cursor: pointer;
+input[type='time'] *,
+input[type='date'],
+input[type='date'] * {
+  cursor: pointer !important;
 }
 
 /* 이미지 하단 여백 제거 */

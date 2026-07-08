@@ -1,26 +1,18 @@
-// 컴포넌트 로드 -------------------------------------------------------
-// 헤더 컴포넌트 로드
+// HTML 문서의 DOM 구조가 전부 만들어진 뒤에 내부 코드를 실행 -------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
+  // 헤더 컴포넌트 로드
   loadHeader();
-});
 
-// 푸터 컴포넌트 로드
-document.addEventListener('DOMContentLoaded', () => {
+  // 푸터 컴포넌트 로드
   loadFooter();
-});
 
-// 사이드바 컴포넌트 로드
-document.addEventListener('DOMContentLoaded', () => {
+  // 사이드바 컴포넌트 로드
   loadSidebar();
-});
 
-// 내용 좌측 리스트 컴포넌트 로드
-document.addEventListener('DOMContentLoaded', () => {
+  // 내용 좌측 리스트 컴포넌트 로드
   loadLeftList();
-});
 
-// 탭 컴포넌트 로드
-document.addEventListener('DOMContentLoaded', () => {
+  // 탭 컴포넌트 로드
   loadTab();
 });
 // -------------------------------------------------------
@@ -29,9 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function loadHeader() {
   fetch('comp-header.html')
     .then((response) => response.text())
-    .then((data) => {
-      document.getElementById('compHeader').innerHTML = data;
-    });
+    .then((data) => (document.getElementById('compHeader').innerHTML = data));
 }
 // -------------------------------------------------------
 
@@ -39,9 +29,7 @@ function loadHeader() {
 function loadFooter() {
   fetch('comp-footer.html')
     .then((response) => response.text())
-    .then((data) => {
-      document.getElementById('compFooter').innerHTML = data;
-    });
+    .then((data) => (document.getElementById('compFooter').innerHTML = data));
 }
 // -------------------------------------------------------
 
@@ -73,9 +61,7 @@ function setActiveMenu() {
     const href = a.getAttribute('href');
     const linkPage = href.split('/').pop();
 
-    if (currentPage == linkPage) {
-      a.closest('li').classList.add('active');
-    }
+    if (currentPage == linkPage) a.closest('li').classList.add('active');
   });
 }
 // -------------------------------------------------------
@@ -181,9 +167,7 @@ function loadLeftList() {
 function loadLeftListData() {
   fetch('./data/employee-list.json')
     .then((response) => response.json())
-    .then((data) => {
-      renderTable(data.columns, data.rows);
-    });
+    .then((data) => renderTable(data.columns, data.rows));
 }
 
 // 리스트 칩 클래스 추가
@@ -244,9 +228,7 @@ function renderTable(columns, rows, targetSelector = '.list_table') {
   // 최초 렌더링 시 첫 번째 tr active 처리
   const firstRow = body.querySelector('tr');
 
-  if (firstRow) {
-    firstRow.classList.add('active');
-  }
+  if (firstRow) firstRow.classList.add('active');
 }
 
 // 좌측 리스트 tr active 처리
@@ -304,9 +286,7 @@ function renderTab(menu) {
   menu.forEach((item, index) => {
     const isActive = currentTabId ? item.id == currentTabId : index == 0;
 
-    if (isActive) {
-      activeTabId = item.id;
-    }
+    if (isActive) activeTabId = item.id;
 
     tabList.innerHTML += `
       <li class="${isActive ? 'active' : ''}" data-tab-id="${item.id}">
@@ -321,9 +301,7 @@ function renderTab(menu) {
 
     const firstTab = tabList.querySelector('li');
 
-    if (firstTab) {
-      firstTab.classList.add('active');
-    }
+    if (firstTab) firstTab.classList.add('active');
   }
 
   // 처음 로드 시 탭 내용도 같이 처리
@@ -335,11 +313,8 @@ function setActiveTabContent(tabId) {
   const tabContents = document.querySelectorAll('[data-tab-content]');
 
   tabContents.forEach((content) => {
-    if (content.dataset.tabContent == tabId) {
-      content.style.display = 'block';
-    } else {
-      content.style.display = 'none';
-    }
+    if (content.dataset.tabContent == tabId) content.style.display = 'block';
+    else content.style.display = 'none';
   });
 }
 

@@ -133,7 +133,7 @@ table tbody tr td button:active,
 [class*=' popup_'] .pop_cont button:active {
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  /* padding: 1rem; */
 }
 table tbody tr.tr_insert td .inp_box,
 table tbody tr.tr_insert td textarea,
@@ -311,4 +311,8 @@ table tbody tr.tr_insert td .inp_box {
 [class*=' popup_'] .pop_bottom_btn button {
   flex: 1;
   height: 3.6rem;
+}
+
+.closed {
+  display: none;
 }
