@@ -344,3 +344,18 @@ document.addEventListener('click', (event) => {
   window.history.pushState({}, '', url);
 });
 // -------------------------------------------------------
+
+// 팝업 -------------------------------------------------------
+// 업체 리스트 팝업 tr active 처리
+document.addEventListener('click', (event) => {
+  const clickedRow = event.target.closest('#compPopupBizList tbody tr');
+
+  if (!clickedRow) return;
+
+  const rows = document.querySelectorAll('#compPopupBizList tbody tr');
+
+  rows.forEach((row) => row.classList.remove('active'));
+
+  clickedRow.classList.add('active');
+});
+// -------------------------------------------------------

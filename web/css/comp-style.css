@@ -136,21 +136,68 @@ aside nav li a span {
 /* ------------------------------------------------------- */
 
 /* 탭 ------------------------------------------------------- */
-.tab_component {
+.tab_list {
   border-bottom: 0.3rem solid var(--navy);
 }
-.tab_component .tab_list li {
+.tab_list li {
   width: calc(100% / 12);
 }
-.tab_component .tab_list li button {
+.tab_list li button {
   width: 100%;
   height: 5.5rem;
   padding: 0 1rem;
   color: var(--muted);
   background-color: var(--white);
 }
-.tab_component .tab_list li.active button {
+.tab_list li.active button {
   color: var(--white);
   background-color: var(--navy);
+}
+
+/* 탭 내용 */
+.tab_content_wrap .tab_content {
+  display: none;
+}
+.tab_content_wrap {
+  width: 100%;
+  height: calc(100% - 5.8rem);
+}
+.tab_content table .tr_insert {
+  background-color: var(--yellow-03);
+}
+.tab_content[data-tab-content='01'],
+.tab_content[data-tab-content='02'],
+.tab_content[data-tab-content='03'],
+.tab_content[data-tab-content='04'],
+.tab_content[data-tab-content='05'],
+.tab_content[data-tab-content='06'],
+.tab_content[data-tab-content='07'],
+.tab_content[data-tab-content='08'],
+.tab_content[data-tab-content='09'],
+.tab_content[data-tab-content='10'],
+.tab_content[data-tab-content='11'],
+.tab_content[data-tab-content='12'] {
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+}
+/* ------------------------------------------------------- */
+
+/* 업체 팝업 리스트 ------------------------------------------------------- */
+.popup_search_biz .pop_cont .inp_box {
+  height: 4rem;
+}
+.popup_search_biz .pop_cont .scroll_box {
+  height: 50rem;
+}
+.popup_search_biz .pop_cont .table_biz {
+  margin-top: 1rem;
+}
+.popup_search_biz .pop_cont .table_biz tbody tr td {
+  cursor: pointer;
+}
+.popup_search_biz .pop_cont .table_biz tbody tr.active {
+  color: var(--white);
+  background-color: var(--blue-4);
 }
 /* ------------------------------------------------------- */

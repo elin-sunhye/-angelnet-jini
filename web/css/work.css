@@ -1,71 +1,228 @@
-/* 초기화 ------------------------------------------------------- */
-.tab_content_wrap .tab_content {
-  display: none;
-}
-/* ------------------------------------------------------- */
-
 /* 탭 내용 ------------------------------------------------------- */
-.tab_content table .tr_insert {
-  background-color: var(--yellow-03);
+.tab_content[data-tab-content='01'],
+.tab_content[data-tab-content='02'] .top_noti_wrap .noti_box,
+.tab_content[data-tab-content='02'] .add_calendar_wrap,
+.tab_content[data-tab-content='03'] .scroll_box,
+.tab_content[data-tab-content='04'] .scroll_box,
+.tab_content[data-tab-content='04'] .top_noti_wrap .noti_box {
+  background-color: var(--white);
+}
+
+.tab_content[data-tab-content='02'] > div,
+.tab_content[data-tab-content='03'] > div,
+.tab_content[data-tab-content='04'] > div {
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.tab_content[data-tab-content='02'],
+.tab_content[data-tab-content='02'] .top_noti_wrap .noti_box,
+.tab_content[data-tab-content='02']
+  .add_calendar_wrap
+  .add_calendar
+  .row:last-of-type
+  .col,
+.tab_content[data-tab-content='02']
+  .add_calendar_wrap
+  .add_calendar
+  .row
+  .col:nth-of-type(2),
+.add_calendar_wrap .add_calendar .row .col label + *,
+.tab_content[data-tab-content='02'] .list_table,
+.tab_content[data-tab-content='03'] .scroll_box,
+.tab_content[data-tab-content='04'] .scroll_box {
+  flex: 1;
+}
+
+.tab_content[data-tab-content='02'] .top_noti_wrap .noti_box,
+.tab_content[data-tab-content='02'] .add_calendar_wrap,
+.tab_content[data-tab-content='04'] .top_noti_wrap .noti_box {
+  padding: 2rem;
+}
+
+.tab_content[data-tab-content='02'] .top_noti_wrap .noti_box ul li,
+.tab_content[data-tab-content='04'] .top_noti_wrap .noti_box ul li {
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab_content[data-tab-content='02'] .list_table tbody tr td span,
+.tab_content[data-tab-content='04'] .list_table tbody tr td span,
+.tab_content[data-tab-content='04'] .list_table tbody tr td p:last-of-type {
+  display: block;
+  margin-top: 0.5rem;
 }
 
 /* data-tab-content='01' */
+.tab_content[data-tab-content='01'] {
+  padding: 0;
+}
 .tab_content[data-tab-content='01'] table {
   border-top: 0 !important;
-}
-.tab_content[data-tab-content='01'] table tbody tr td select {
-  text-align: center;
 }
 .tab_content[data-tab-content='01'] table tbody tr td:last-of-type {
   text-align: left;
 }
-.tab_content[data-tab-content='01'] table tbody tr td .search_biz_nm_box,
-.tab_content[data-tab-content='01'] table tbody tr td .search_biz_nm_box * {
-  cursor: pointer;
-}
-.tab_content[data-tab-content='01'] table tbody tr td .search_biz_nm_box {
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid var(--gray-3);
-  padding: 0 1rem;
-}
-.tab_content[data-tab-content='01']
-  table
-  tbody
-  tr
-  td
-  .search_biz_nm_box
-  .inp_box,
-.tab_content[data-tab-content='01']
-  table
-  tbody
-  tr
-  td
-  .search_biz_nm_box
-  button {
-  border: 0;
-}
-.tab_content[data-tab-content='01']
-  table
-  tbody
-  tr
-  td
-  .search_biz_nm_box
-  button {
-  width: fit-content;
-}
-
-.popup_search_biz .pop_cont .inp_box {
-  height: 4rem;
-}
-.popup_search_biz .pop_cont .scroll_box {
-  height: 50rem;
-  overflow: auto;
-}
-.popup_search_biz .pop_cont .table_biz {
-  margin-top: 1rem;
-}
 
 /* data-tab-content='02' */
+.tab_content[data-tab-content='02'] .top_noti_wrap {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.tab_content[data-tab-content='02'] .title {
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+.tab_content[data-tab-content='02'] .title h6 {
+  font-size: 2rem;
+}
+.tab_content[data-tab-content='02'] .top_noti_wrap .noti_box ul,
+.tab_content[data-tab-content='02'] .top_noti_wrap .noti_box ul li {
+  width: 100%;
+}
 
+.tab_content[data-tab-content='02']
+  .top_noti_wrap
+  .noti_box
+  ul
+  li:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
+.tab_content[data-tab-content='02'] .add_calendar_wrap {
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.tab_content[data-tab-content='02'] .add_calendar_wrap .add_calendar {
+  width: calc(100% - 15rem);
+}
+.tab_content[data-tab-content='02'] .add_calendar_wrap .add_calendar .row {
+  width: 100%;
+  gap: 2rem;
+}
+.tab_content[data-tab-content='02'] .add_calendar_wrap .add_calendar .row .col {
+  align-items: center;
+  gap: 1rem;
+}
+.tab_content[data-tab-content='02']
+  .add_calendar_wrap
+  .add_calendar
+  .row
+  .col:first-of-type {
+  width: 20rem;
+}
+.tab_content[data-tab-content='02']
+  .add_calendar_wrap
+  .add_calendar
+  .row
+  .col:first-of-type
+  label {
+  width: 6rem;
+}
+.tab_content[data-tab-content='02']
+  .add_calendar_wrap
+  .add_calendar
+  .row
+  .col:first-of-type
+  label
+  + input {
+  width: calc(100% - 7rem);
+}
+.tab_content[data-tab-content='02']
+  .add_calendar_wrap
+  .add_calendar
+  .row
+  .col:last-of-type {
+  width: 15rem;
+}
+.tab_content[data-tab-content='02']
+  .add_calendar_wrap
+  .add_calendar
+  .row:last-of-type {
+  margin-top: 1rem;
+}
+.tab_content[data-tab-content='02'] .list_table tbody tr {
+  cursor: default;
+}
+.tab_content[data-tab-content='02'] .list_table tbody tr:hover {
+  background-color: transparent !important;
+}
+.tab_content[data-tab-content='02'] .list_table tbody tr td {
+  cursor: pointer;
+}
+.tab_content[data-tab-content='02'] .list_table tbody tr td p,
+.tab_content[data-tab-content='02'] .list_table tbody tr td span {
+  text-align: left;
+}
+.tab_content[data-tab-content='02'] .list_table tbody tr td span::before {
+  content: '';
+  display: inline-block;
+  width: 0.5rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  background: url('../img/ico-pin.svg') no-repeat 0 0 / cover;
+}
+.tab_content[data-tab-content='02'] .list_table tbody tr td:hover {
+  background-color: var(--blue-2);
+}
+.tab_content[data-tab-content='02'] .list_table tbody tr td.active {
+  color: var(--white);
+  background-color: var(--blue-4);
+}
+.tab_content[data-tab-content='02']
+  .list_table
+  tbody
+  tr
+  td.active
+  span::before {
+  background: url('../img/ico-pin-w.svg') no-repeat 0 0 / cover;
+}
+/* ------------------------------------------------------- */
+/* .tab_content[data-tab-content='03'] ------------------------------------------------------- */
+.tab_content[data-tab-content='03']
+  .scroll_box
+  .list_table
+  .list_body
+  tr
+  td:not(:last-of-type) {
+  text-align: right;
+}
+.tab_content[data-tab-content='03']
+  .scroll_box
+  .list_table
+  .list_body
+  tr
+  td:last-of-type {
+  text-align: left;
+}
+/* ------------------------------------------------------- */
+
+/* .tab_content[data-tab-content='04'] ------------------------------------------------------- */
+.tab_content[data-tab-content='04'] .top_noti_wrap .noti_box ul {
+  gap: 3rem;
+  width: 100%;
+}
+.tab_content[data-tab-content='04'] .list_table tbody tr td:nth-of-type(2) {
+  text-align: left;
+}
+.tab_content[data-tab-content='04']
+  .list_table
+  tbody
+  tr
+  td:not(:first-of-type, :nth-of-type(2), :nth-of-type(3)) {
+  text-align: right;
+}
+.tab_content[data-tab-content='04'] .list_table tbody tr td p.blue {
+  color: var(--primary);
+}
+
+.tab_content[data-tab-content='04'] .list_table tbody tr td p.red {
+  color: var(--red);
+}
+.tab_content[data-tab-content='04'] .list_table tbody tr td span {
+  font-size: 1.3rem;
+}
 /* ------------------------------------------------------- */

@@ -63,3 +63,14 @@
   </div>
  </div>
 </div>
+
+## 탭
+
+<!-- 텝 컴포넌트 -->
+<div id="compTab"></div>
+
+<!-- 탭 내용 -->
+<div class="tab_content_wrap">
+  <div class="tab_content" data-tab-content="01"></div>
+  <div class="tab_content" data-tab-content="02"></div>
+</div>
