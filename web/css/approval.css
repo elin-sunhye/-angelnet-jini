@@ -1,0 +1,20 @@
+/* 탭 내용 ------------------------------------------------------- */
+.tab_content[data-tab-content='01'],
+.tab_content[data-tab-content='02'],
+.tab_content[data-tab-content='03'],
+.tab_content[data-tab-content='04'],
+.tab_content[data-tab-content='05'],
+.tab_content[data-tab-content='06'] {
+  background-color: var(--white);
+  padding: 0;
+}
+
+.tab_content[data-tab-content='01'] .list_table tbody tr,
+.tab_content[data-tab-content='02'] .list_table tbody tr,
+.tab_content[data-tab-content='03'] .list_table tbody tr,
+.tab_content[data-tab-content='04'] .list_table tbody tr,
+.tab_content[data-tab-content='05'] .list_table tbody tr,
+.tab_content[data-tab-content='06'] .list_table tbody tr {
+  cursor: pointer;
+}
+/* ------------------------------------------------------- */

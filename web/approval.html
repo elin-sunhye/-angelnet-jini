@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>전자결재</title>
     <link rel="stylesheet" href="./css/comp-style.css" />
+    <link rel="stylesheet" href="./css/approval.css" />
     <script src="./js/jquery.3.1.1.js"></script>
     <script src="./js/common.js"></script>
     <script src="./js/approval.js"></script>
@@ -28,23 +29,60 @@
 
           <!-- 탭 내용 -->
           <div class="tab_content_wrap">
-            <!-- 전체 -->
-            <div id="compTab01" class="tab_content" data-tab-content="01"></div>
+            <div class="btn_box flex">
+              <button
+                type="button"
+                class="btn_select"
+                onclick="location.href = './add-approval.html'"
+              >
+                등록
+              </button>
+              <button type="button" class="btn_reject">삭제</button>
+            </div>
 
-            <!-- 신규 -->
-            <div id="compTab02" class="tab_content" data-tab-content="02"></div>
+            <div class="tab_box">
+              <!-- 전체 -->
+              <div
+                id="compTab01"
+                class="tab_content"
+                data-tab-content="01"
+              ></div>
 
-            <!-- 미결 -->
-            <div id="compTab03" class="tab_content" data-tab-content="03"></div>
+              <!-- 신규 -->
+              <div
+                id="compTab02"
+                class="tab_content"
+                data-tab-content="02"
+              ></div>
 
-            <!-- 완결 -->
-            <div id="compTab04" class="tab_content" data-tab-content="04"></div>
+              <!-- 미결 -->
+              <div
+                id="compTab03"
+                class="tab_content"
+                data-tab-content="03"
+              ></div>
 
-            <!-- 반려 -->
-            <div id="compTab05" class="tab_content" data-tab-content="05"></div>
+              <!-- 완결 -->
+              <div
+                id="compTab04"
+                class="tab_content"
+                data-tab-content="04"
+              ></div>
 
-            <!-- 보류 -->
-            <div id="compTab06" class="tab_content" data-tab-content="06"></div>
+              <!-- 반려 -->
+              <div
+                id="compTab05"
+                class="tab_content"
+                data-tab-content="05"
+              ></div>
+
+              <!-- 보류 -->
+              <div
+                id="compTab06"
+                class="tab_content"
+                data-tab-content="06"
+              ></div>
+            </div>
           </div>
         </div>
       </div>

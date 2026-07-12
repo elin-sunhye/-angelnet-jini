@@ -1,5 +1,11 @@
 /* 탭 내용 ------------------------------------------------------- */
 .tab_content[data-tab-content='01'],
+.tab_content[data-tab-content='02'],
+.tab_content[data-tab-content='03'],
+.tab_content[data-tab-content='04'] {
+  height: 100%;
+}
+.tab_content[data-tab-content='01'],
 .tab_content[data-tab-content='02'] .top_noti_wrap .noti_box,
 .tab_content[data-tab-content='02'] .add_calendar_wrap,
 .tab_content[data-tab-content='03'] .scroll_box,
@@ -143,9 +149,6 @@
   .add_calendar
   .row:last-of-type {
   margin-top: 1rem;
-}
-.tab_content[data-tab-content='02'] .list_table tbody tr {
-  cursor: default;
 }
 .tab_content[data-tab-content='02'] .list_table tbody tr:hover {
   background-color: transparent !important;

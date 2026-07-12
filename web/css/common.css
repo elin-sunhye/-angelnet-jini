@@ -203,6 +203,30 @@ textarea {
 }
 
 /* 버튼 공통 */
+.btn_box {
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  height: 3rem;
+  margin: 1rem 0;
+}
+.btn_box button {
+  width: 9rem;
+  height: 100%;
+}
+
+/* 선택 */
+.btn_save {
+  background: var(--navy);
+  border: 0.1rem solid var(--navy);
+  color: var(--white);
+}
+
+.btn_save:hover {
+  background: var(--blue-2);
+  color: var(--navy);
+}
+
 /* 선택 */
 .btn_select {
   background: var(--primary);

@@ -98,17 +98,17 @@ aside nav li a span {
 /* ------------------------------------------------------- */
 
 /* 좌측 리스트 ------------------------------------------------------- */
-.list_table tbody tr {
+#compLeftList .list_table tbody tr {
   cursor: pointer;
 }
-.list_table tbody tr td {
+#compLeftList .list_table tbody tr td {
   height: 3rem;
 }
-.list_table tbody tr:not(.tr_insert) td:has(.chip),
-.list_table tbody tr:not(.tr_insert) td:has(button) {
+#compLeftList .list_table tbody tr:not(.tr_insert) td:has(.chip),
+#compLeftList .list_table tbody tr:not(.tr_insert) td:has(button) {
   padding: 1rem;
 }
-.list_table tbody tr td .chip {
+#compLeftList .list_table tbody tr td .chip {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -116,21 +116,21 @@ aside nav li a span {
   height: 100%;
   font-size: 1.2rem;
 }
-.list_table tbody tr td .chip.day_off {
+#compLeftList .list_table tbody tr td .chip.day_off {
   color: var(--red);
   background-color: var(--red-02);
 }
-.list_table tbody tr td .chip.half_day_off {
+#compLeftList .list_table tbody tr td .chip.half_day_off {
   color: var(--yellow);
   background-color: var(--yellow-02);
 }
-.list_table tbody tr td .chip.out_of_office {
+#compLeftList .list_table tbody tr td .chip.out_of_office {
   color: var(--green);
   background-color: var(--green-02);
 }
-.list_table tbody tr.active td .chip.day_off,
-.list_table tbody tr.active td .chip.half_day_off,
-.list_table tbody tr.active td .chip.out_of_office {
+#compLeftList .list_table tbody tr.active td .chip.day_off,
+#compLeftList .list_table tbody tr.active td .chip.half_day_off,
+#compLeftList .list_table tbody tr.active td .chip.out_of_office {
   background-color: var(--white);
 }
 /* ------------------------------------------------------- */
@@ -179,7 +179,10 @@ aside nav li a span {
 .tab_content[data-tab-content='12'] {
   width: 100%;
   height: 100%;
-  padding: 1rem;
+  padding: 1rem 0 0;
+}
+.tab_content_wrap .tab_box {
+  height: calc(100% - 5rem);
 }
 /* ------------------------------------------------------- */
 
