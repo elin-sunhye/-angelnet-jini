@@ -1,51 +1,67 @@
-// HTML 문서의 DOM 구조가 전부 만들어진 뒤에 내부 코드를 실행 -------------------------------------------------------
-document.addEventListener('DOMContentLoaded', () => {
-  // 헤더 컴포넌트 로드
-  loadHeader();
-
-  // 푸터 컴포넌트 로드
-  loadFooter();
-
-  // 사이드바 컴포넌트 로드
-  loadSidebar();
-
-  // 내용 좌측 리스트 컴포넌트 로드
-  loadLeftList();
-
-  // 탭 컴포넌트 로드
-  loadTab();
+// HTML 문서의 DOM 구조가 전부 만들어진 뒤에 내부 코드 실행
+document.addEventListener('DOMContentLoaded', async () => {
+  try {
+    await Promise.all([
+      loadHeader(),
+      loadFooter(),
+      loadSidebar(),
+      loadLeftList(),
+      loadTab(),
+    ]);
+  } catch (error) {
+    console.error('공통 컴포넌트 로드 오류:', error);
+  }
 });
-// -------------------------------------------------------
 
 // 헤더 컴포넌트 -------------------------------------------------------
-function loadHeader() {
-  fetch('comp-header.html')
-    .then((response) => response.text())
-    .then((data) => (document.getElementById('compHeader').innerHTML = data));
+async function loadHeader() {
+  const target = document.getElementById('compHeader');
+
+  if (!target) return;
+
+  const response = await fetch('comp-header.html');
+
+  if (!response.ok) throw new Error('comp-header.html 로드 실패');
+
+  const data = await response.text();
+
+  target.innerHTML = data;
 }
-// -------------------------------------------------------
 
 // 푸터 컴포넌트 -------------------------------------------------------
-function loadFooter() {
-  fetch('comp-footer.html')
-    .then((response) => response.text())
-    .then((data) => (document.getElementById('compFooter').innerHTML = data));
+async function loadFooter() {
+  const target = document.getElementById('compFooter');
+
+  if (!target) return;
+
+  const response = await fetch('comp-footer.html');
+
+  if (!response.ok) throw new Error('comp-footer.html 로드 실패');
+
+  const data = await response.text();
+
+  target.innerHTML = data;
 }
-// -------------------------------------------------------
 
 // 사이드바 컴포넌트 -------------------------------------------------------
-function loadSidebar() {
-  fetch('comp-sidebar.html')
-    .then((response) => response.text())
-    .then((data) => {
-      document.getElementById('compSidebar').innerHTML = data;
+async function loadSidebar() {
+  const target = document.getElementById('compSidebar');
 
-      // 사이드바가 들어간 후 active 처리
-      setActiveMenu();
+  if (!target) return;
 
-      // 사이드바가 들어간 후 캘린더 처리
-      loadFullCalendar();
-    });
+  const response = await fetch('comp-sidebar.html');
+
+  if (!response.ok) throw new Error('comp-sidebar.html 로드 실패');
+
+  const data = await response.text();
+
+  target.innerHTML = data;
+
+  // 사이드바가 들어간 후 active 처리
+  setActiveMenu();
+
+  // 사이드바가 들어간 후 캘린더 처리
+  loadFullCalendar();
 }
 
 // 현재 페이지에 맞는 사이드바 메뉴 active 처리
@@ -55,35 +71,50 @@ function setActiveMenu() {
   const menuItems = document.querySelectorAll('#compSidebar nav li');
   const menuLinks = document.querySelectorAll('#compSidebar nav a');
 
-  menuItems.forEach((li) => li.classList.remove('active'));
+  menuItems.forEach((item) => {
+    item.classList.remove('active');
+  });
 
-  menuLinks.forEach((a) => {
-    const href = a.getAttribute('href');
+  menuLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+
+    if (!href) return;
+
     const linkPage = href.split('/').pop();
 
-    if (currentPage == linkPage) a.closest('li').classList.add('active');
+    if (currentPage === linkPage) link.closest('li')?.classList.add('active');
   });
 }
-// -------------------------------------------------------
 
 // FullCalendar -------------------------------------------------------
-// 캘린더 CND 로드
+// FullCalendar CDN 로드
 function loadFullCalendar() {
   const calendarEl = document.getElementById('calendar');
 
   // comp-sidebar.html 안에 #calendar가 없으면 실행 안 함
   if (!calendarEl) return;
 
-  // 이미 FullCalendar가 로드되어 있으면 바로 캘린더 실행
+  // 이미 FullCalendar가 로드되어 있으면 바로 실행
   if (window.FullCalendar) {
     initCalendar();
     return;
   }
 
+  // 중복 로드 방지
+  const existingScript = document.querySelector('script[data-full-calendar]');
+
+  if (existingScript) return;
+
   const script = document.createElement('script');
+
   script.src =
     'https://cdn.jsdelivr.net/npm/fullcalendar@6.1.21/index.global.min.js';
+
+  script.dataset.fullCalendar = 'true';
+
   script.onload = initCalendar;
+
+  script.onerror = () => console.error('FullCalendar CDN 로드 실패');
 
   document.head.appendChild(script);
 }
@@ -92,7 +123,7 @@ function loadFullCalendar() {
 function initCalendar() {
   const calendarEl = document.getElementById('calendar');
 
-  if (!calendarEl) return;
+  if (!calendarEl || !window.FullCalendar) return;
 
   const calendar = new FullCalendar.Calendar(calendarEl, {
     initialView: 'dayGridMonth',
@@ -115,90 +146,121 @@ function initCalendar() {
 
     fixedWeekCount: false,
     showNonCurrentDates: true,
-
-    dayCellContent: function (arg) {
-      return arg.date.getDate();
-    },
-
-    dayCellClassNames: function (arg) {
-      const day = arg.date.getDay();
-
-      if (day === 0) return ['is-sunday'];
-      if (day === 6) return ['is-saturday'];
-
-      return [];
-    },
-
-    dayHeaderClassNames: function (arg) {
-      const day = arg.date.getDay();
-
-      if (day === 0) return ['is-sunday'];
-      if (day === 6) return ['is-saturday'];
-
-      return [];
-    },
-
     height: 'auto',
     contentHeight: 'auto',
     eventDisplay: 'none',
+
+    dayCellContent(arg) {
+      return arg.date.getDate();
+    },
+
+    dayCellClassNames(arg) {
+      const day = arg.date.getDay();
+
+      if (day === 0) return ['is-sunday'];
+      if (day === 6) return ['is-saturday'];
+
+      return [];
+    },
+
+    dayHeaderClassNames(arg) {
+      const day = arg.date.getDay();
+
+      if (day === 0) return ['is-sunday'];
+      if (day === 6) return ['is-saturday'];
+
+      return [];
+    },
   });
 
   calendar.render();
 }
-// -------------------------------------------------------
 
 // 리스트 컴포넌트 -------------------------------------------------------
-function loadLeftList() {
+async function loadLeftList() {
   const compLeftList = document.getElementById('compLeftList');
 
   if (!compLeftList) return;
 
-  fetch('comp-list.html')
-    .then((response) => response.text())
-    .then((data) => {
-      compLeftList.innerHTML = data;
+  const response = await fetch('comp-list.html');
 
-      // 리스트 컴포넌트가 들어간 후 동적 데이터 로드
-      loadLeftListData();
-    });
+  if (!response.ok) throw new Error('comp-list.html 로드 실패');
+
+  const data = await response.text();
+
+  compLeftList.innerHTML = data;
+
+  // 리스트 컴포넌트가 들어간 후 페이지별 데이터 로드
+  await loadLeftListData(compLeftList);
 }
 
-// 리스트 동적 데이터 로드
-function loadLeftListData() {
-  fetch('./data/employee-list.json')
-    .then((response) => response.json())
-    .then((data) => renderTable(data.columns, data.rows));
+// 페이지별 리스트 동적 데이터 로드
+async function loadLeftListData(compLeftList) {
+  const dataSrc = compLeftList.dataset.listSrc;
+
+  if (!dataSrc) {
+    console.error('#compLeftList에 data-list-src가 없습니다.');
+    return;
+  }
+
+  const response = await fetch(dataSrc);
+
+  if (!response.ok) throw new Error(`${dataSrc} 로드 실패`);
+
+  const data = await response.json();
+
+  if (!Array.isArray(data.columns))
+    throw new Error(`${dataSrc}의 columns가 배열이 아닙니다.`);
+
+  if (!Array.isArray(data.rows))
+    throw new Error(`${dataSrc}의 rows가 배열이 아닙니다.`);
+
+  renderTable(data.columns, data.rows, '#compLeftList .list_table');
 }
 
 // 리스트 칩 클래스 추가
 function getChipClass(value) {
-  if (value == '연차') return 'day_off';
-  if (value == '반차') return 'half_day_off';
-  if (value == '외근') return 'out_of_office';
+  if (value === '연차') return 'day_off';
+  if (value === '반차') return 'half_day_off';
+  if (value === '외근') return 'out_of_office';
 
   return '';
 }
 
 // 리스트 내용 출력
-function renderTable(columns, rows, targetSelector = '.list_table') {
+function renderTable(
+  columns,
+  rows,
+  targetSelector = '#compLeftList .list_table',
+) {
   const table = document.querySelector(targetSelector);
 
-  if (!table) return;
+  if (!table) {
+    console.error(`${targetSelector}를 찾을 수 없습니다.`);
+    return;
+  }
 
   const colgroup = table.querySelector('.list_colgroup');
   const header = table.querySelector('.list_header');
   const body = table.querySelector('.list_body');
 
-  if (!colgroup || !header || !body) return;
+  if (!colgroup || !header || !body) {
+    console.error('리스트 테이블 내부 요소를 찾을 수 없습니다.');
+    return;
+  }
 
   colgroup.innerHTML = '';
   header.innerHTML = '';
   body.innerHTML = '';
 
-  const columnWidth = `${100 / columns.length}%`;
+  // 첫 번째 컬럼은 50px 고정, 나머지는 자동 분할
+  columns.forEach((column, index) => {
+    if (index === 0) {
+      colgroup.innerHTML += '<col style="width: 50px" />';
+    } else {
+      colgroup.innerHTML += '<col />';
+    }
 
-  columns.forEach((column) => {
-    colgroup.innerHTML += `<col style="width: ${columnWidth}" />`;
     header.innerHTML += `<th>${column.label}</th>`;
   });
 
@@ -209,10 +271,12 @@ function renderTable(columns, rows, targetSelector = '.list_table') {
       const value = row[column.key] ?? '';
       const chipClass = getChipClass(value);
 
-      if (chipClass !== '') {
+      if (chipClass) {
         tr += `
           <td>
-            <span class="chip ${chipClass}">${value}</span>
+            <span class="chip ${chipClass}">
+              ${value}
+            </span>
           </td>
         `;
       } else {
@@ -225,137 +289,171 @@ function renderTable(columns, rows, targetSelector = '.list_table') {
     body.innerHTML += tr;
   });
 
-  // 최초 렌더링 시 첫 번째 tr active 처리
+  // 최초 렌더링 시 첫 번째 행 active 처리
   const firstRow = body.querySelector('tr');
 
   if (firstRow) firstRow.classList.add('active');
 }
 
-// 좌측 리스트 tr active 처리
-document.addEventListener('click', (event) => {
-  const clickedRow = event.target.closest('#compLeftList tbody tr');
-
-  if (!clickedRow) return;
-
-  const rows = document.querySelectorAll('#compLeftList tbody tr');
-
-  rows.forEach((row) => row.classList.remove('active'));
-
-  clickedRow.classList.add('active');
-});
-// -------------------------------------------------------
-
 // 탭 컴포넌트 -------------------------------------------------------
-function loadTab() {
+async function loadTab() {
   const compTab = document.getElementById('compTab');
 
   if (!compTab) return;
 
-  fetch('comp-tab.html')
-    .then((response) => response.text())
-    .then((data) => {
-      compTab.innerHTML = data;
+  const response = await fetch('comp-tab.html');
 
-      // 탭 컴포넌트가 들어간 후 탭 데이터 로드
-      loadTabData();
-    });
+  if (!response.ok) {
+    throw new Error('comp-tab.html 로드 실패');
+  }
+
+  const data = await response.text();
+
+  compTab.innerHTML = data;
+
+  // 탭 컴포넌트가 들어간 후 페이지별 데이터 로드
+  await loadTabData(compTab);
 }
 
-// 탭 동적 데이터 로드
-function loadTabData() {
-  fetch('./data/work.json')
-    .then((response) => response.json())
-    .then((data) => {
-      renderTab(data.menu);
-    });
+// 페이지별 탭 동적 데이터 로드
+async function loadTabData(compTab) {
+  const dataSrc = compTab.dataset.tabSrc;
+
+  if (!dataSrc) {
+    console.error('#compTab에 data-tab-src가 없습니다.');
+    return;
+  }
+
+  const response = await fetch(dataSrc);
+
+  if (!response.ok) throw new Error(`${dataSrc} 로드 실패`);
+
+  const data = await response.json();
+
+  if (!Array.isArray(data.menu))
+    throw new Error(`${dataSrc}의 menu가 배열이 아닙니다.`);
+
+  renderTab(compTab, data.menu);
 }
 
 // 탭 버튼 출력
-function renderTab(menu) {
-  const tabList = document.querySelector('#compTab .tab_list');
+function renderTab(compTab, menu) {
+  const tabList = compTab.querySelector('.tab_list');
 
-  if (!tabList) return;
+  if (!tabList) {
+    console.error('comp-tab.html 내부에 .tab_list가 없습니다.');
+    return;
+  }
 
   const urlParams = new URLSearchParams(window.location.search);
   const currentTabId = urlParams.get('tab');
 
-  tabList.innerHTML = '';
-
   let activeTabId = '';
 
-  menu.forEach((item, index) => {
-    const isActive = currentTabId ? item.id == currentTabId : index == 0;
+  tabList.innerHTML = '';
 
-    if (isActive) activeTabId = item.id;
+  menu.forEach((item, index) => {
+    const itemId = String(item.id);
+
+    const isActive = currentTabId
+      ? itemId === String(currentTabId)
+      : index === 0;
+
+    if (isActive) {
+      activeTabId = itemId;
+    }
 
     tabList.innerHTML += `
-      <li class="${isActive ? 'active' : ''}" data-tab-id="${item.id}">
-        <button type="button" class="tab_btn">${item.name}</button>
+      <li
+        class="${isActive ? 'active' : ''}"
+        data-tab-id="${itemId}"
+      >
+        <button type="button" class="tab_btn">
+          ${item.name}
+        </button>
       </li>
     `;
   });
 
-  // URL에 tab 파라미터가 없거나, 잘못된 tab 값이면 첫 번째 탭으로 처리
+  // URL tab 값이 잘못됐으면 첫 번째 탭 선택
   if (!activeTabId && menu.length > 0) {
-    activeTabId = menu[0].id;
+    activeTabId = String(menu[0].id);
 
     const firstTab = tabList.querySelector('li');
 
     if (firstTab) firstTab.classList.add('active');
   }
 
-  // 처음 로드 시 탭 내용도 같이 처리
+  // 처음 로드 시 탭 내용도 처리
   setActiveTabContent(activeTabId);
 }
 
 // 탭 내용 display 처리
 function setActiveTabContent(tabId) {
-  const tabContents = document.querySelectorAll('[data-tab-content]');
+  const tabContents = document.querySelectorAll(
+    '.tab_content[data-tab-content]',
+  );
 
   tabContents.forEach((content) => {
-    if (content.dataset.tabContent == tabId) content.style.display = 'block';
-    else content.style.display = 'none';
+    const contentTabId = String(content.dataset.tabContent);
+    const isActive = contentTabId === String(tabId);
+
+    content.style.display = isActive ? 'block' : 'none';
   });
 }
 
-// 탭 active 처리 + URL 파라미터 변경
-document.addEventListener('click', (event) => {
-  const clickedTab = event.target.closest('#compTab .tab_list li');
-
-  if (!clickedTab) return;
-
-  const tabId = clickedTab.dataset.tabId;
-
-  if (!tabId) return;
-
-  const tabItems = document.querySelectorAll('#compTab .tab_list li');
-
-  tabItems.forEach((item) => item.classList.remove('active'));
-
-  clickedTab.classList.add('active');
-
-  // 탭 내용 변경
-  setActiveTabContent(tabId);
-
-  // URL 파라미터 변경
+// 탭 URL 파라미터 변경
+function updateTabUrl(tabId) {
   const url = new URL(window.location.href);
+
   url.searchParams.set('tab', tabId);
 
   window.history.pushState({}, '', url);
-});
-// -------------------------------------------------------
+}
 
-// 팝업 -------------------------------------------------------
-// 업체 리스트 팝업 tr active 처리
+// 공통 클릭 이벤트 -------------------------------------------------------
 document.addEventListener('click', (event) => {
-  const clickedRow = event.target.closest('#compPopupBizList tbody tr');
+  // 좌측 리스트 tr active 처리
+  const clickedLeftRow = event.target.closest('#compLeftList tbody tr');
 
-  if (!clickedRow) return;
+  if (clickedLeftRow) {
+    const rows = document.querySelectorAll('#compLeftList tbody tr');
 
-  const rows = document.querySelectorAll('#compPopupBizList tbody tr');
+    rows.forEach((row) => row.classList.remove('active'));
 
-  rows.forEach((row) => row.classList.remove('active'));
+    clickedLeftRow.classList.add('active');
 
-  clickedRow.classList.add('active');
+    return;
+  }
+
+  // 탭 active 처리
+  const clickedTab = event.target.closest('#compTab .tab_list li[data-tab-id]');
+
+  if (clickedTab) {
+    const tabId = clickedTab.dataset.tabId;
+
+    if (!tabId) return;
+
+    const tabItems = document.querySelectorAll('#compTab .tab_list li');
+
+    tabItems.forEach((item) => item.classList.remove('active'));
+
+    clickedTab.classList.add('active');
+
+    setActiveTabContent(tabId);
+    updateTabUrl(tabId);
+
+    return;
+  }
+
+  // 업체 리스트 팝업 tr active 처리
+  const clickedPopupRow = event.target.closest('#compPopupBizList tbody tr');
+
+  if (clickedPopupRow) {
+    const rows = document.querySelectorAll('#compPopupBizList tbody tr');
+
+    rows.forEach((row) => row.classList.remove('active'));
+
+    clickedPopupRow.classList.add('active');
+  }
 });
-// -------------------------------------------------------

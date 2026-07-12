@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       loadTab02(),
       loadTab03(),
       loadTab04(),
+      loadTab05(),
+      loadTab06(),
       loadPopupBizList(),
     ]);
 
@@ -16,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // tab01 컴포넌트
 async function loadTab01() {
-  const response = await fetch('work/tab01.html');
+  const response = await fetch('approval/tab01.html');
 
   if (!response.ok) throw new Error('tab01.html 로드 실패');
 
@@ -26,7 +28,7 @@ async function loadTab01() {
 
 // tab02 컴포넌트
 async function loadTab02() {
-  const response = await fetch('work/tab02.html');
+  const response = await fetch('approval/tab02.html');
 
   if (!response.ok) throw new Error('tab02.html 로드 실패');
 
@@ -36,7 +38,7 @@ async function loadTab02() {
 
 // tab03 컴포넌트
 async function loadTab03() {
-  const response = await fetch('work/tab03.html');
+  const response = await fetch('approval/tab03.html');
 
   if (!response.ok) throw new Error('tab03.html 로드 실패');
 
@@ -45,12 +47,30 @@ async function loadTab03() {
 }
 // tab04 컴포넌트
 async function loadTab04() {
-  const response = await fetch('work/tab04.html');
+  const response = await fetch('approval/tab04.html');
 
   if (!response.ok) throw new Error('tab04.html 로드 실패');
 
   const data = await response.text();
   document.getElementById('compTab04').innerHTML = data;
+}
+// tab05 컴포넌트
+async function loadTab05() {
+  const response = await fetch('approval/tab05.html');
+
+  if (!response.ok) throw new Error('tab05.html 로드 실패');
+
+  const data = await response.text();
+  document.getElementById('compTab05').innerHTML = data;
+}
+// tab06 컴포넌트
+async function loadTab06() {
+  const response = await fetch('approval/tab06.html');
+
+  if (!response.ok) throw new Error('tab06.html 로드 실패');
+
+  const data = await response.text();
+  document.getElementById('compTab06').innerHTML = data;
 }
 
 // 업체 팝업 컴포넌트
