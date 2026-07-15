@@ -162,9 +162,6 @@ aside nav li a span {
   width: 100%;
   height: calc(100% - 5.8rem);
 }
-.tab_content table .tr_insert {
-  background-color: var(--yellow-03);
-}
 .tab_content[data-tab-content='01'],
 .tab_content[data-tab-content='02'],
 .tab_content[data-tab-content='03'],

@@ -18,59 +18,119 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // tab01 컴포넌트
 async function loadTab01() {
+  const target = document.getElementById('compTab01');
+
+  if (!target) return;
+
   const response = await fetch('approval/tab01.html');
 
   if (!response.ok) throw new Error('tab01.html 로드 실패');
 
   const data = await response.text();
-  document.getElementById('compTab01').innerHTML = data;
+
+  target.innerHTML = data;
 }
 
 // tab02 컴포넌트
 async function loadTab02() {
+  const target = document.getElementById('compTab02');
+
+  if (!target) return;
+
   const response = await fetch('approval/tab02.html');
 
   if (!response.ok) throw new Error('tab02.html 로드 실패');
 
   const data = await response.text();
-  document.getElementById('compTab02').innerHTML = data;
+
+  target.innerHTML = data;
 }
 
 // tab03 컴포넌트
 async function loadTab03() {
+  const target = document.getElementById('compTab03');
+
+  if (!target) return;
+
   const response = await fetch('approval/tab03.html');
 
   if (!response.ok) throw new Error('tab03.html 로드 실패');
 
   const data = await response.text();
-  document.getElementById('compTab03').innerHTML = data;
+
+  target.innerHTML = data;
 }
 // tab04 컴포넌트
 async function loadTab04() {
+  const target = document.getElementById('compTab04');
+
+  if (!target) return;
+
   const response = await fetch('approval/tab04.html');
 
   if (!response.ok) throw new Error('tab04.html 로드 실패');
 
   const data = await response.text();
-  document.getElementById('compTab04').innerHTML = data;
+
+  target.innerHTML = data;
 }
 // tab05 컴포넌트
 async function loadTab05() {
+  const target = document.getElementById('compTab05');
+
+  if (!target) return;
+
   const response = await fetch('approval/tab05.html');
 
   if (!response.ok) throw new Error('tab05.html 로드 실패');
 
   const data = await response.text();
-  document.getElementById('compTab05').innerHTML = data;
+
+  target.innerHTML = data;
 }
 // tab06 컴포넌트
 async function loadTab06() {
+  const target = document.getElementById('compTab06');
+
+  if (!target) return;
+
   const response = await fetch('approval/tab06.html');
 
   if (!response.ok) throw new Error('tab06.html 로드 실패');
 
   const data = await response.text();
-  document.getElementById('compTab06').innerHTML = data;
+
+  target.innerHTML = data;
+}
+
+// common.js의 좌측 리스트 렌더링이 끝난 후 실행
+document.addEventListener('leftListLoaded', activeRequest);
+
+// 등록 화면 이동 시 현재 URL에 해당하는 좌측 메뉴 활성화
+function activeRequest() {
+  const pathname = window.location.pathname;
+  const rows = document.querySelectorAll('#compLeftList tbody tr');
+
+  if (!rows.length) return;
+
+  const menuName = pathname.includes('request-equipment')
+    ? '기자재'
+    : pathname.includes('request-loan')
+      ? '대여금'
+      : pathname.includes('request-new-vendor')
+        ? '신규'
+        : '';
+
+  if (!menuName) return;
+
+  const activeRow = [...rows].find((row) =>
+    row.textContent.trim().includes(menuName),
+  );
+
+  if (!activeRow) return;
+
+  rows.forEach((row) => row.classList.remove('active'));
+  activeRow.classList.add('active');
 }
 
 // 업체 팝업 컴포넌트
@@ -108,16 +168,3 @@ function initBizPopup() {
     }
   });
 }
-
-// 일정관리 날짜 active 처리
-document.addEventListener('click', (event) => {
-  const clickedCell = event.target.closest('#compTab02 tbody tr td');
-
-  if (!clickedCell) return;
-
-  const cells = document.querySelectorAll('#compTab02 tbody tr td');
-
-  cells.forEach((cell) => cell.classList.remove('active'));
-
-  clickedCell.classList.add('active');
-});

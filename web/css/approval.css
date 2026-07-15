@@ -17,4 +17,46 @@
 .tab_content[data-tab-content='06'] .list_table tbody tr {
   cursor: pointer;
 }
+
+.request_wrap {
+  flex-direction: column;
+  gap: 1rem;
+  height: calc(100% - 5rem);
+}
+.request_wrap .biz_info,
+.request_wrap .biz_info_2,
+.request_wrap .cost_info {
+  gap: 1rem;
+}
+.request_wrap .biz_info table .td_insert {
+  padding: 0 1rem;
+}
+.request_wrap .biz_info table .td_insert > div {
+  border: 0;
+}
+.request_wrap .biz_info table:first-of-type {
+  width: 55%;
+}
+.request_wrap .biz_info table:last-of-type {
+  width: 45%;
+}
+.request_wrap .biz_info_2,
+.request_wrap .cost_info,
+.request_wrap .remark {
+  height: calc((100% - 5.5rem) / 3) !important;
+}
+.request_wrap .biz_info_2 > div,
+.request_wrap .cost_info > div,
+.request_wrap .remark {
+  width: 50%;
+  height: 100%;
+  background-color: var(--white);
+}
+.request_wrap .cost_info > div p,
+.request_wrap .remark {
+  padding: 2rem 1rem;
+}
+.request_wrap .remark textarea {
+  border: 0;
+}
 /* ------------------------------------------------------- */

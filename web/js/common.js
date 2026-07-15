@@ -81,8 +81,21 @@ function setActiveMenu() {
     if (!href) return;
 
     const linkPage = href.split('/').pop();
+    const menuItem = link.closest('li');
 
-    if (currentPage === linkPage) link.closest('li')?.classList.add('active');
+    if (!menuItem) return;
+
+    if (currentPage === linkPage) {
+      menuItem.classList.add('active');
+      return;
+    }
+
+    if (
+      currentPage.includes('request') &&
+      menuItem.textContent.trim().includes('전자결재')
+    ) {
+      menuItem.classList.add('active');
+    }
   });
 }
 
@@ -192,6 +205,9 @@ async function loadLeftList() {
 
   // 리스트 컴포넌트가 들어간 후 페이지별 데이터 로드
   await loadLeftListData(compLeftList);
+
+  // 리스트 렌더링 완료 알림
+  document.dispatchEvent(new CustomEvent('leftListLoaded'));
 }
 
 // 페이지별 리스트 동적 데이터 로드
@@ -289,10 +305,14 @@ function renderTable(
     body.innerHTML += tr;
   });
 
-  // 최초 렌더링 시 첫 번째 행 active 처리
-  const firstRow = body.querySelector('tr');
+  // 등록 페이지가 아닌 경우에만 첫 번째 행 active 처리
+  const isRequestPage = window.location.pathname.includes('request-');
 
-  if (firstRow) firstRow.classList.add('active');
+  if (!isRequestPage) {
+    const firstRow = body.querySelector('tr');
+
+    firstRow?.classList.add('active');
+  }
 }
 
 // 탭 컴포넌트 -------------------------------------------------------
@@ -417,11 +437,27 @@ document.addEventListener('click', (event) => {
   const clickedLeftRow = event.target.closest('#compLeftList tbody tr');
 
   if (clickedLeftRow) {
+    const clickData =
+      clickedLeftRow.querySelector('td:nth-child(2)')?.textContent.trim() ?? '';
+
     const rows = document.querySelectorAll('#compLeftList tbody tr');
 
     rows.forEach((row) => row.classList.remove('active'));
-
     clickedLeftRow.classList.add('active');
+
+    const addButton = document.querySelector('.btn_add_doc');
+
+    if (addButton) {
+      addButton.onclick = () => {
+        if (clickData.includes('대여금')) {
+          location.href = './request-loan.html';
+        } else if (clickData.includes('신규')) {
+          location.href = './request-new-vendor.html';
+        } else {
+          location.href = './request-equipment.html';
+        }
+      };
+    }
 
     return;
   }
@@ -437,7 +473,6 @@ document.addEventListener('click', (event) => {
     const tabItems = document.querySelectorAll('#compTab .tab_list li');
 
     tabItems.forEach((item) => item.classList.remove('active'));
-
     clickedTab.classList.add('active');
 
     setActiveTabContent(tabId);
@@ -453,7 +488,6 @@ document.addEventListener('click', (event) => {
     const rows = document.querySelectorAll('#compPopupBizList tbody tr');
 
     rows.forEach((row) => row.classList.remove('active'));
-
     clickedPopupRow.classList.add('active');
   }
 });

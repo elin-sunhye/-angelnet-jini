@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>신규 기안서 등록</title>
+    <link rel="stylesheet" href="./css/comp-style.css" />
+    <link rel="stylesheet" href="./css/approval.css" />
+    <script src="./js/jquery.3.1.1.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/approval.js"></script>
+  </head>
+  <body>
+    <!-- 헤더 컴포넌트 -->
+    <div id="compHeader"></div>
+
+    <div class="wrap flex">
+      <!-- 사이드바 컴포넌트 -->
+      <div id="compSidebar"></div>
+      <!-- 페이지 내용 -->
+      <div id="container" class="flex">
+        <!-- 좌 리스트 컴포넌트 -->
+        <div id="compLeftList" data-list-src="./data/doc-list.json"></div>
+
+        <!-- 우 -->
+        <div class="contants">
+          <div class="btn_box flex">
+            <button type="button" class="btn_select">결재</button>
+            <button type="button" class="btn_save">저장</button>
+            <button
+              type="button"
+              class="btn_reject"
+              onclick="location.href = './approval.html'"
+            >
+              취소
+            </button>
+          </div>
+
+          <!-- 기안서 -->
+          <div class="request_new_vendor_wrap request_wrap flex">
+            <table class="vertical">
+              <colgroup class="list_colgroup">
+                <col width="auto" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+              </colgroup>
+              <tbody class="list_body">
+                <tr>
+                  <th rowspan="7">기본<br />정보</th>
+                  <th>
+                    <p>날짜</p>
+                  </th>
+                  <td colspan="2" class="td_insert">
+                    <div class="inp_box">
+                      <input type="date" name="date" title="날짜" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th>
+                    <p>구분</p>
+                  </th>
+                  <td colspan="2">
+                    <div class="select_box">
+                      <select name="category" title="구분 선택">
+                        <option value="1" selected>기존</option>
+                        <option value="2">신규</option>
+                      </select>
+                      <p></p>
+                    </div>
+                  </td>
+                  <th>
+                    <p>제목</p>
+                  </th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="text" name="title" title="제목" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>업체명</p></th>
+                  <td colspan="3">
+                    <div class="search_biz_nm_box flex">
+                      <div class="inp_box">
+                        <input
+                          type="text"
+                          name="bizNm"
+                          title="업체명"
+                          readonly
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        class="btn_open_popup"
+                        aria-label="팝업 열기"
+                      >
+                        <img src="./img/ico-search.svg" alt="" />
+                      </button>
+                    </div>
+                  </td>
+                  <th><p>사업자번호</p></th>
+                  <td colspan="3">
+                    <div class="inp_box">
+                      <input type="number" name="bizNum" title="사업자번호" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>업태</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="text" name="bizType" title="업태" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>종목</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="text" name="bizItem" title="종목" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>업장전화번호</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="number" name="bizNum" title="사업자번호" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>FAX전화번호</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="number" name="bizNum" title="사업자번호" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>주소</p></th>
+                  <td colspan="6">
+                    <div class="inp_box">
+                      <input type="text" name="addr" title="주소" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>상세주소</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="text" name="addr2" title="상세주소" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>층수</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="number" name="step" title="층수" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>대표자</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="text" name="ceoNm" title="대표자" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>휴대폰번호</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input
+                        type="number"
+                        name="ceoPhoneNum"
+                        title="대표자 휴대폰 번호"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>E-MAIL</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input
+                        type="email"
+                        name="ceoEmail"
+                        title="대표자 이메일"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>자택주소</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="text" name="ceoAddr" title="대표자 주소" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>실제 운영자</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="text" name="operatorNm" title="운영자" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>휴대폰번호</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input
+                        type="number"
+                        name="operatorPhoneNum"
+                        title="운영자 휴대폰 번호"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>E-MAIL</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input
+                        type="email"
+                        name="operatorEmail"
+                        title="운영자 이메일"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>자택주소</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input
+                        type="text"
+                        name="operatorAddr"
+                        title="운영자 주소"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>업장 메니저</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="text" name="managerNm" title="메니저" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>휴대폰번호</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input
+                        type="number"
+                        name="managerPhoneNum"
+                        title="메니저 휴대폰 번호"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>E-MAIL</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input
+                        type="email"
+                        name="managerEmail"
+                        title="메니저 이메일"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>자택주소</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input
+                        type="text"
+                        name="managerAddr"
+                        title="메니저 주소"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <table class="vertical">
+              <colgroup class="list_colgroup">
+                <col width="auto" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+                <col width="8.6%" />
+              </colgroup>
+              <tbody class="list_body">
+                <tr>
+                  <th rowspan="5">거래<br />조건</th>
+                  <th><p>오픈예정일</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="date" name="openDate" title="오픈 예정일" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>실평수</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="number" name="m2" title="실평수" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>테이블수</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="number" name="table" title="테이블 수" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>월매출</p></th>
+                  <td colspan="3">
+                    <div class="inp_box">
+                      <input type="number" name="monthlySales" title="월매출" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>주력품목</p></th>
+                  <td colspan="3">
+                    <div class="inp_box">
+                      <input type="text" name="item" title="주력품목" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>주력메뉴</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="number" name="menu" title="주력메뉴" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>예상수익</p></th>
+                  <td colspan="3">
+                    <div class="inp_box">
+                      <input type="number" name="" title="예상수익" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>거래조건</p></th>
+                  <td colspan="3">
+                    <p></p>
+                  </td>
+                  <th><p>지원기자재</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="text" name="" title="지원기자재" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>기타지원</p></th>
+                  <td colspan="3">
+                    <div class="inp_box">
+                      <input type="number" name="" title="기타지원" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>대여금</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="number" name="retalFee" title="대여금" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>상환횟수</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input
+                        type="number"
+                        name="returnCount"
+                        title="상환횟수"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>만기일자</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="date" name="expiredDate" title="만기일자" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>월상환액</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input
+                        type="number"
+                        name="monthlyReturnFee"
+                        title="월상환액"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>결제조건</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="text" name="" title="결제조건" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+                <tr>
+                  <th><p>초기지원일</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="date" name="openDate" title="초기지원일" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th colspan="2"><p>투입 비용 회수 기간(대여금 제외)</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input
+                        type="number"
+                        name="count"
+                        title="투입 비용 회수 기간(대여금 제외)"
+                      />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>결제방식</p></th>
+                  <td>
+                    <div class="inp_box">
+                      <input type="text" name="payment" title="결제방식" />
+                    </div>
+                    <p></p>
+                  </td>
+                  <th><p>배송담당</p></th>
+                  <td colspan="2">
+                    <div class="inp_box">
+                      <input type="text" name="deliver" title="배송담당" />
+                    </div>
+                    <p></p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 팝업 -->
+        <div id="compPopupBizList"></div>
+      </div>
+    </div>
+
+    <!-- 푸터 컴포넌트 -->
+    <div id="compFooter"></div>
+  </body>
+</html>

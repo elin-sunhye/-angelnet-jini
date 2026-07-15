@@ -68,6 +68,8 @@ table:not(aside .calendar_box .calendar table) {
 }
 table:not(aside .calendar_box .calendar table) thead,
 table.vertical tbody tr th {
+  padding: 0 1rem;
+  text-align: right;
   background-color: var(--gray-1);
 }
 table:not(aside .calendar_box .calendar table) tbody tr {
@@ -92,6 +94,11 @@ table:not(aside .calendar_box .calendar table) tbody tr td {
 }
 table tbody tr.tr_insert td {
   padding: 0.5rem !important;
+}
+
+table .tr_insert,
+table .td_insert {
+  background-color: var(--yellow-03) !important;
 }
 
 .select_box,

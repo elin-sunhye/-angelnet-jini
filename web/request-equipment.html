@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기자재 기안서 등록</title>
+    <link rel="stylesheet" href="./css/comp-style.css" />
+    <link rel="stylesheet" href="./css/approval.css" />
+    <script src="./js/jquery.3.1.1.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/approval.js"></script>
+  </head>
+  <body>
+    <!-- 헤더 컴포넌트 -->
+    <div id="compHeader"></div>
+
+    <div class="wrap flex">
+      <!-- 사이드바 컴포넌트 -->
+      <div id="compSidebar"></div>
+      <!-- 페이지 내용 -->
+      <div id="container" class="flex">
+        <!-- 좌 리스트 컴포넌트 -->
+        <div id="compLeftList" data-list-src="./data/doc-list.json"></div>
+
+        <!-- 우 -->
+        <div class="contants">
+          <div class="btn_box flex">
+            <button type="button" class="btn_select">결재</button>
+            <button type="button" class="btn_save">저장</button>
+            <button
+              type="button"
+              class="btn_reject"
+              onclick="location.href = './approval.html'"
+            >
+              취소
+            </button>
+          </div>
+
+          <!-- 기안서 -->
+          <div class="request_equipment_wrap request_wrap flex">
+            <div class="biz_info flex">
+              <table class="vertical">
+                <colgroup class="list_colgroup">
+                  <col width="15%" />
+                  <col width="35%" />
+                  <col width="15%" />
+                  <col width="35%" />
+                </colgroup>
+                <tbody class="list_body">
+                  <tr>
+                    <th>
+                      <p>업체명</p>
+                    </th>
+                    <td class="td_insert">
+                      <div class="search_biz_nm_box flex">
+                        <div class="inp_box">
+                          <input
+                            type="text"
+                            name="bizNm"
+                            title="업체명"
+                            readonly
+                          />
+                        </div>
+                        <button
+                          type="button"
+                          class="btn_open_popup"
+                          aria-label="팝업 열기"
+                        >
+                          <img src="./img/ico-search.svg" alt="" />
+                        </button>
+                      </div>
+                    </td>
+                    <th>
+                      <p>대표자</p>
+                    </th>
+                    <td><p></p></td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <p>사업자번호</p>
+                    </th>
+                    <td>
+                      <p></p>
+                    </td>
+                    <th>
+                      <p>전화번호</p>
+                    </th>
+                    <td><p></p></td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <p>주소</p>
+                    </th>
+                    <td>
+                      <p></p>
+                    </td>
+                    <th>
+                      <p>담당자</p>
+                    </th>
+                    <td><p></p></td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="vertical">
+                <colgroup class="list_colgroup">
+                  <col width="20%" />
+                  <col width="30%" />
+                  <col width="20%" />
+                  <col width="30%" />
+                </colgroup>
+
+                <tbody class="list_body">
+                  <tr>
+                    <th>
+                      <p>최수금일</p>
+                    </th>
+                    <td>
+                      <p></p>
+                    </td>
+                    <th>
+                      <p>최종거래일</p>
+                    </th>
+                    <td><p></p></td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <p>대여잔액</p>
+                    </th>
+                    <td>
+                      <p></p>
+                    </td>
+                    <th>
+                      <p>대여총액</p>
+                    </th>
+                    <td><p></p></td>
+                  </tr>
+                  <tr>
+                    <th>
+                      <p>냉장고</p>
+                    </th>
+                    <td>
+                      <p></p>
+                    </td>
+                    <th>
+                      <p>기타</p>
+                    </th>
+                    <td><p></p></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="biz_info_2 flex">
+              <div class="scroll_box">
+                <table class="list_table">
+                  <colgroup class="list_colgroup">
+                    <col width="18%" />
+                    <col width="18%" />
+                    <col width="31%" />
+                    <col width="15%" />
+                    <col width="15%" />
+                  </colgroup>
+
+                  <thead>
+                    <tr class="list_header">
+                      <th>일자</th>
+                      <th>구분</th>
+                      <th>품명</th>
+                      <th>지원</th>
+                      <th>회수</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="list_body">
+                    <tr class="tr_insert">
+                      <td>
+                        <div class="inp_box">
+                          <input type="date" name="date" title="날짜" />
+                        </div>
+                      </td>
+                      <td>
+                        <div class="select_box">
+                          <select name="category" title="구분 선택">
+                            <option value="1" selected>기존</option>
+                            <option value="2">신규</option>
+                          </select>
+                        </div>
+                      </td>
+                      <td>
+                        <div class="inp_box">
+                          <input type="text" name="productNm" title="품명" />
+                        </div>
+                      </td>
+                      <td>
+                        <div class="inp_box">
+                          <input type="number" name="support" title="지원" />
+                        </div>
+                      </td>
+                      <td>
+                        <div class="inp_box">
+                          <input type="number" name="return" title="회수" />
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="scroll_box">
+                <table class="list_table">
+                  <colgroup class="list_colgroup"></colgroup>
+
+                  <thead>
+                    <tr class="list_header">
+                      <th>년월</th>
+                      <th>매출공급가</th>
+                      <th>매출이익</th>
+                      <th>수금액</th>
+                      <th>공병회수</th>
+                      <th>채권잔액</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class="list_body">
+                    <tr class="tr_insert"></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="cost_info flex">
+              <div>
+                <p>현재 지원 현황</p>
+                <div class="scroll_box">
+                  <table class="list_table">
+                    <colgroup class="list_colgroup"></colgroup>
+
+                    <thead>
+                      <tr class="list_header">
+                        <th>지원일자</th>
+                        <th>품명</th>
+                        <th>수량</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="list_body">
+                      <tr></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div>
+                <p>대여금 상세 현황</p>
+                <div class="scroll_box">
+                  <table class="list_table">
+                    <colgroup class="list_colgroup"></colgroup>
+
+                    <thead>
+                      <tr class="list_header">
+                        <th>일자</th>
+                        <th>대여번호</th>
+                        <th>대여금액</th>
+                        <th>입금금액</th>
+                        <th>잔액</th>
+                        <th>횟수</th>
+                      </tr>
+                    </thead>
+
+                    <tbody class="list_body">
+                      <tr></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="remark">
+              <p>기안자 의견</p>
+              <textarea></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- 팝업 -->
+        <div id="compPopupBizList"></div>
+      </div>
+    </div>
+
+    <!-- 푸터 컴포넌트 -->
+    <div id="compFooter"></div>
+  </body>
+</html>
