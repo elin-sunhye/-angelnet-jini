@@ -59,4 +59,33 @@
 .request_wrap .remark textarea {
   border: 0;
 }
+.request_wrap table tr .select_box,
+.request_wrap table tr .search_biz_nm_box {
+  border: 0;
+}
+
+/* 신규 기안서 */
+.request_new_vendor_wrap table tr:first-of-type th:first-of-type {
+  border-right: 0.1rem solid var(--gray-2);
+  text-align: center;
+}
+
+.request_new_vendor_wrap table:first-of-type tr:first-of-type th:first-of-type {
+  background-color: var(--blue-5);
+}
+.request_new_vendor_wrap
+  table:nth-of-type(2)
+  tr:first-of-type
+  th:first-of-type {
+  background-color: var(--red-03);
+}
+.request_new_vendor_wrap
+  table:nth-of-type(3)
+  tr:first-of-type
+  th:first-of-type {
+  background-color: var(--yellow-04);
+}
+.request_new_vendor_wrap table:last-of-type tr:first-of-type th:first-of-type {
+  background-color: var(--green-03);
+}
 /* ------------------------------------------------------- */

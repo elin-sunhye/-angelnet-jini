@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       loadTab05(),
       loadTab06(),
       loadPopupBizList(),
+      initRequestTableCell(),
     ]);
 
     initBizPopup();
@@ -166,5 +167,25 @@ function initBizPopup() {
     ) {
       popup.classList.add('closed');
     }
+  });
+}
+
+// request-로 시작하는 페이지의 vertical 테이블 td 활성화
+function initRequestTableCell() {
+  if (!window.location.pathname.includes('request-')) return;
+
+  const cells = [...document.querySelectorAll('table.vertical tr td')].filter(
+    (td) => !td.closest('[id^="compTab"]'),
+  );
+
+  if (!cells.length) return;
+
+  cells[0].classList.add('td_insert');
+
+  cells.forEach((td) => {
+    td.addEventListener('click', () => {
+      cells.forEach((cell) => cell.classList.remove('td_insert'));
+      td.classList.add('td_insert');
+    });
   });
 }

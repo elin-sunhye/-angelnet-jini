@@ -15,18 +15,22 @@
   --blue-1: #f2f5fa;
   --blue-2: #e9f4fb;
   --blue-4: #77bfed;
+  --blue-5: #e3eff8;
 
   --muted: #94a3b8;
 
   --red: #eb5757;
   --red-02: #eb57572a;
+  --red-03: #ffd8d8;
 
   --yellow: #f59e0b;
   --yellow-02: #f59e0b2a;
   --yellow-03: #f59e0b3a;
+  --yellow-04: #ffe3b4;
 
   --green: #22c55e;
   --green-02: #22c55e2a;
+  --green-03: #a7eabf;
 }
 
 body {
