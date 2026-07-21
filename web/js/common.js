@@ -239,6 +239,7 @@ function getChipClass(value) {
   if (value === '연차') return 'day_off';
   if (value === '반차') return 'half_day_off';
   if (value === '외근') return 'out_of_office';
+  if (value === '출장') return 'biz_trip';
 
   return '';
 }

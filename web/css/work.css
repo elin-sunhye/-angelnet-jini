@@ -185,6 +185,13 @@
 }
 /* ------------------------------------------------------- */
 /* .tab_content[data-tab-content='03'] ------------------------------------------------------- */
+.tab_content[data-tab-content='03'] {
+  padding: 0;
+}
+
+.tab_content[data-tab-content='03'] .vertical {
+  border-top: 0;
+}
 .tab_content[data-tab-content='03']
   .scroll_box
   .list_table

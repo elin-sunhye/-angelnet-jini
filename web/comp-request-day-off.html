@@ -1,0 +1,199 @@
+<div class="btn_box flex">
+  <button type="button" class="btn_save btn_add_day_off">등록</button>
+  <button type="button" class="btn_cancel">취소</button>
+</div>
+
+<!-- 등록폼 -->
+<div class="add_day_off_wrap flex">
+  <div class="title flex">
+    <span><img src="./img/ico-calendar.svg" alt="캘린더" /></span>
+    <h6>일정 추가</h6>
+  </div>
+
+  <div class="add_day_off">
+    <div class="row flex">
+      <div class="col flex">
+        <label for="category">구분</label>
+        <div class="select_box">
+          <select name="category" title="구분 선택">
+            <option value="1" selected>연차</option>
+            <option value="2">반차</option>
+            <option value="3">외근</option>
+            <option value="4">출장</option>
+          </select>
+        </div>
+      </div>
+      <div class="col flex">
+        <label for="startDt">시작일</label>
+        <input type="date" name="startDt" title="시작일" />
+      </div>
+      <div class="col flex">
+        <label for="endDt">종료일</label>
+        <input type="date" name="endDt" title="종료일" />
+      </div>
+      <div class="col flex">
+        <label for="days">기간</label>
+        <input type="number" name="days" title="기간" />
+      </div>
+    </div>
+    <div class="row flex">
+      <div class="col flex">
+        <label for="remark">사유</label>
+        <textarea name="remark"></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="scroll_box">
+  <table class="list_table">
+    <colgroup class="list_colgroup">
+      <col width="10%" />
+      <col width="10%" />
+      <col width="10%" />
+      <col width="5%" />
+      <col width="auto" />
+      <col width="10%" />
+    </colgroup>
+
+    <thead>
+      <tr class="list_header">
+        <th>구분</th>
+        <th>시작일자</th>
+        <th>종료일자</th>
+        <th>기간</th>
+        <th>사유</th>
+        <th>상태</th>
+      </tr>
+    </thead>
+
+    <tbody class="list_body">
+      <tr>
+        <td>
+          <span class="chip day_off">연차</span>
+        </td>
+        <td>
+          <p>2026-03-25</p>
+        </td>
+        <td>
+          <p>2026-04-25</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+        <td><p></p></td>
+        <td>
+          <span class="chip temp">임시저장</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="chip day_off">연차</span>
+        </td>
+        <td>
+          <p>2026-03-25</p>
+        </td>
+        <td>
+          <p>2026-04-25</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+        <td><p></p></td>
+        <td>
+          <span class="chip ing">결재중</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="chip day_off">연차</span>
+        </td>
+        <td>
+          <p>2026-03-25</p>
+        </td>
+        <td>
+          <p>2026-04-25</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+        <td><p></p></td>
+        <td>
+          <span class="chip ing">결재중</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="chip half_day_off">반차</span>
+        </td>
+        <td>
+          <p>2026-03-25</p>
+        </td>
+        <td>
+          <p>2026-04-25</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+        <td><p></p></td>
+        <td>
+          <span class="chip reject">반려</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="chip half_day_off">반차</span>
+        </td>
+        <td>
+          <p>2026-03-25</p>
+        </td>
+        <td>
+          <p>2026-04-25</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+        <td><p></p></td>
+        <td>
+          <span class="chip hold">보류</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="chip day_off">연차</span>
+        </td>
+        <td>
+          <p>2026-03-25</p>
+        </td>
+        <td>
+          <p>2026-04-25</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+        <td><p></p></td>
+        <td>
+          <span class="chip approve">승인</span>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span class="chip half_day_off">반차</span>
+        </td>
+        <td>
+          <p>2026-03-25</p>
+        </td>
+        <td>
+          <p>2026-04-25</p>
+        </td>
+        <td>
+          <p>20</p>
+        </td>
+        <td><p></p></td>
+        <td>
+          <span class="chip approve">승인</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

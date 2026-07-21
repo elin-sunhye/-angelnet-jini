@@ -189,3 +189,16 @@ function initRequestTableCell() {
     });
   });
 }
+
+// tr 클릭 시 active 클래스 추가
+document.addEventListener('click', (event) => {
+  const clickRow = event.target.closest('.tab_box table tbody tr');
+
+  if (clickRow) {
+    const rows = document.querySelectorAll('.tab_box table tbody tr');
+    rows.forEach((row) => row.classList.remove('active'));
+    clickRow.classList.add('active');
+
+    return;
+  }
+});

@@ -104,35 +104,6 @@ aside nav li a span {
 #compLeftList .list_table tbody tr td {
   height: 3rem;
 }
-#compLeftList .list_table tbody tr:not(.tr_insert) td:has(.chip),
-#compLeftList .list_table tbody tr:not(.tr_insert) td:has(button) {
-  padding: 1rem;
-}
-#compLeftList .list_table tbody tr td .chip {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  font-size: 1.2rem;
-}
-#compLeftList .list_table tbody tr td .chip.day_off {
-  color: var(--red);
-  background-color: var(--red-02);
-}
-#compLeftList .list_table tbody tr td .chip.half_day_off {
-  color: var(--yellow);
-  background-color: var(--yellow-02);
-}
-#compLeftList .list_table tbody tr td .chip.out_of_office {
-  color: var(--green);
-  background-color: var(--green-02);
-}
-#compLeftList .list_table tbody tr.active td .chip.day_off,
-#compLeftList .list_table tbody tr.active td .chip.half_day_off,
-#compLeftList .list_table tbody tr.active td .chip.out_of_office {
-  background-color: var(--white);
-}
 /* ------------------------------------------------------- */
 
 /* 탭 ------------------------------------------------------- */

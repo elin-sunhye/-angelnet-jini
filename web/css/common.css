@@ -16,6 +16,7 @@
   --blue-2: #e9f4fb;
   --blue-4: #77bfed;
   --blue-5: #e3eff8;
+  --blue-6: #e3f0fa;
 
   --muted: #94a3b8;
 
@@ -27,10 +28,13 @@
   --yellow-02: #f59e0b2a;
   --yellow-03: #f59e0b3a;
   --yellow-04: #ffe3b4;
+  --yellow-05: #fef0da;
 
   --green: #22c55e;
   --green-02: #22c55e2a;
   --green-03: #a7eabf;
+  --green-04: #ddf1d9;
+  --green-05: #19a204;
 }
 
 body {
@@ -95,6 +99,10 @@ table:not(aside .calendar_box .calendar table) tbody tr td {
   height: 4rem;
   padding: 1rem;
   text-align: center;
+}
+table:not(aside .calendar_box .calendar table) tbody tr td:has(.chip),
+table:not(aside .calendar_box .calendar table) tbody tr td:has(button) {
+  padding: 0.5rem;
 }
 table tbody tr.tr_insert td {
   padding: 0.5rem !important;
@@ -239,13 +247,13 @@ textarea {
 }
 
 /* 선택 */
-.btn_select {
+.btn_approve {
   background: var(--primary);
   border: 0.1rem solid var(--primary);
   color: var(--white);
 }
 
-.btn_select:hover {
+.btn_approve:hover {
   background: var(--blue-2);
   color: var(--primary);
 }
@@ -263,25 +271,27 @@ textarea {
 }
 
 /* 승인 */
-.btn_approve {
+.btn_select {
   background: var(--green);
   border: 0.1rem solid var(--green);
   color: var(--white);
 }
 
-.btn_approve:hover {
+.btn_select:hover {
   background: var(--green-02);
   color: var(--green);
 }
 
-/* 반려 */
-.btn_reject {
+/* 반려, 취소 */
+.btn_reject,
+.btn_cancel {
   background: var(--red);
   border: 0.1rem solid var(--red);
   color: var(--white);
 }
 
-.btn_reject:hover {
+.btn_reject:hover,
+.btn_cancel:hover {
   background: var(--red-02);
   color: var(--red);
 }
@@ -376,4 +386,64 @@ textarea {
 /* 스크롤 박스 */
 .scroll_box {
   overflow-y: auto;
+}
+
+/* 칩 컬러 */
+/* 임시저장 */
+.temp {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--gray-5);
+  background-color: var(--gray-2);
+}
+/* 결재중, 반차 */
+.ing,
+.half_day_off {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--green-05);
+  background-color: var(--green-04);
+}
+/* 보류 */
+.hold,
+.out_of_office {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--yellow);
+  background-color: var(--yellow-05);
+}
+/* 승인 */
+.approve,
+.biz_trip {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--primary);
+  background-color: var(--blue-6);
+}
+/* 반려, 연차 */
+.reject,
+.day_off {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  color: var(--red);
+  background-color: var(--red-02);
+}
+
+table tbody tr.active .chip {
+  background-color: var(--white) !important;
 }

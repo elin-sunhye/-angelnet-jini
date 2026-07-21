@@ -9,6 +9,7 @@
     { "code": "02", "employeeName": "김대리", "workType": "외근" },
     { "code": "03", "employeeName": "이과장", "workType": "반차" },
     { "code": "04", "employeeName": "최차장", "workType": "" },
-    { "code": "05", "employeeName": "안실장", "workType": "연차" }
+    { "code": "05", "employeeName": "안실장", "workType": "연차" },
+    { "code": "06", "employeeName": "안대리", "workType": "출장" }
   ]
 }
