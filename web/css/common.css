@@ -81,7 +81,7 @@ table.vertical tbody tr th {
   background-color: var(--gray-1);
 }
 table:not(aside .calendar_box .calendar table) tbody tr {
-  border-top: 1px solid var(--gray-2);
+  border-top: 0.1rem solid var(--gray-2);
 }
 table:not(aside .calendar_box .calendar table, .vertical)
   tbody
@@ -372,7 +372,7 @@ textarea {
 .search_biz_nm_box {
   justify-content: space-between;
   align-items: center;
-  border: 1px solid var(--gray-3);
+  border: 0.1rem solid var(--gray-3);
   padding: 0 1rem;
 }
 .search_biz_nm_box .inp_box,
@@ -407,7 +407,7 @@ textarea {
   color: var(--green-05);
   background-color: var(--green-04);
 }
-/* 보류 */
+/* 보류, 외근 */
 .chip.hold,
 .chip.out_of_office {
   color: var(--yellow);

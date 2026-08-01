@@ -19,12 +19,13 @@
   --blue-6: #e3f0fa;
   --blue-7: #e8f4ff;
   --blue-8: #74beed;
+  --blue-9: #f8fafc;
 
   --muted: #94a3b8;
   --muted-02: #64748b;
 
   --red: #eb5757;
-  --red-02: #eb57572a;
+  --red-02: #fce3e3;
   --red-03: #ffd8d8;
 
   --yellow: #f59e0b;
@@ -85,7 +86,7 @@ table.vertical tbody tr th {
   background-color: var(--gray-1);
 }
 table:not(aside .calendar_box .calendar table) tbody tr {
-  border-top: 1px solid var(--gray-2);
+  border-top: 0.1rem solid var(--gray-2);
 }
 table:not(aside .calendar_box .calendar table, .vertical)
   tbody
@@ -388,7 +389,7 @@ textarea {
 .search_biz_nm_box {
   justify-content: space-between;
   align-items: center;
-  border: 1px solid var(--gray-3);
+  border: 0.1rem solid var(--gray-3);
   padding: 0 1rem;
 }
 .search_biz_nm_box .inp_box,
@@ -421,14 +422,14 @@ textarea {
 /* 결재중, 반차 */
 .chip.ing,
 .chip.half_day_off {
-  color: var(--green-05);
-  background-color: var(--green-04);
+  color: var(--green-04);
+  background-color: var(--green-05);
 }
-/* 보류 */
+/* 보류, 외근 */
 .chip.hold,
 .chip.out_of_office {
-  color: var(--yellow);
-  background-color: var(--yellow-05);
+  color: var(--yellow-05);
+  background-color: var(--yellow);
 }
 /* 승인, 출장, 방문 */
 .chip.approve,
@@ -446,8 +447,8 @@ textarea {
 /* 반려, 연차 */
 .chip.reject,
 .chip.day_off {
-  color: var(--red);
-  background-color: var(--red-02);
+  color: var(--red-02);
+  background-color: var(--red);
 }
 
 table tbody tr.active .chip {

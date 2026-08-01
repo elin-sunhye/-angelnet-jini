@@ -67,8 +67,50 @@ async function loadNav() {
 
   target.innerHTML = data;
 
-  // 네이게이션 들어간 후 active 처리
-  setActiveMenu();
+  // 리스트 컴포넌트가 들어간 후 데이터 로드
+  await loadNavData();
+
+  // 데이터 로드 후 active 처리
+  await setActiveMenu();
+}
+
+// 페이지별 리스트 동적 데이터 로드
+async function loadNavData() {
+  const dataSrc = 'data/nav.json';
+
+  const response = await fetch(dataSrc);
+
+  if (!response.ok) throw new Error(`${dataSrc} 로드 실패`);
+
+  const data = await response.json();
+
+  if (!Array.isArray(data))
+    throw new Error(`${dataSrc}가 배열이 아닙니다.`);
+
+  renderNav(data, '#compNav nav ul');
+}
+
+// 네비 내용 출력
+function renderNav(menu, targetSelector = '#compNav nav ul') {
+  const list = document.querySelector(targetSelector);
+
+  if (!list) {
+    console.error(`${targetSelector}를 찾을 수 없습니다.`);
+    return;
+  }
+
+  list.innerHTML = '';
+
+  menu.forEach((item) => {
+    list.innerHTML += `
+      <li>
+        <a href="${item.href}">
+          <span><img src="${item.icon}" alt="${item.menu} 아이콘" /></span>
+          <p>${item.menu}</p>
+        </a>
+      </li>
+    `;
+  });
 }
 
 // 현재 페이지에 맞는 메뉴 active 처리

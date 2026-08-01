@@ -1,0 +1,32 @@
+[
+  {
+    "icon": "./img/ico-home.svg",
+    "menu": "홈",
+    "href": "./home.html"
+  },
+  {
+    "icon": "./img/ico-work.svg",
+    "menu": "업무",
+    "href": "./work.html"
+  },
+  {
+    "icon": "./img/ico-approval.svg",
+    "menu": "결재",
+    "href": "./approval.html"
+  },
+  {
+    "icon": "./img/ico-constract.svg",
+    "menu": "계약",
+    "href": "./constract.html"
+  },
+  {
+    "icon": "./img/ico-customer.svg",
+    "menu": "고객",
+    "href": "./customer.html"
+  },
+  {
+    "icon": "./img/ico-holiday.svg",
+    "menu": "휴가",
+    "href": "./day-off.html"
+  }
+]

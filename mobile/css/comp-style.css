@@ -105,6 +105,102 @@
 .plan li p span {
   display: inline-block;
   margin: 0 0.5rem;
+}
+/* ------------------------------------------------------- */
+
+/* 아코디언 공통 (전체 일정, 공개 톡방) ------------------------------------------------------- */
+.accordion {
+  border: 0.1rem solid var(--gray-2);
+  border-top: 0;
+  border-bottom: 0;
+}
+.accordion,
+.accordion dd .cont_box {
+  padding: 0;
+  background-color: transparent;
+}
+.accordion dt,
+.accordion dd {
+  padding: 1rem;
+}
+.accordion dt {
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.4rem;
+  border-top: 0.1rem solid var(--gray-2);
+  border-bottom: 0.1rem solid var(--gray-2);
+  background-color: var(--white);
+  cursor: pointer;
+}
+.accordion dt .ico_plus {
+  display: none;
+}
+.accordion dt.active .ico_arrow {
+  transform: rotate(180deg);
+}
+.accordion dt.active .ico_minus {
+  display: none;
+}
+.accordion dt.active .ico_plus {
+  display: inline-block;
+}
+.accordion dd {
+  overflow: hidden;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: var(--blue-9);
+  transition:
+    max-height 0.3s ease,
+    padding 0.3s ease;
+}
+.accordion dd.active {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+/* ------------------------------------------------------- */
+
+/* 공개 톡방 ------------------------------------------------------- */
+#compOpenTalk ul.cont_box li {
+  border-left: 0;
+}
+
+#compOpenTalk ul.cont_box li span {
+  display: inline-block;
+  margin: 0 0.5rem;
   color: var(--muted-02);
+}
+
+#compOpenTalk ul.cont_box li .inp_box {
+  width: 100%;
+  padding: 0;
+}
+#compOpenTalk ul.cont_box li .inp_box input {
+  padding: 0.3rem 0.5rem;
+  border: 0.1rem solid var(--gray-3);
+}
+#compOpenTalk ul.cont_box li .inp_box button {
+  height: 2rem;
+}
+/* ------------------------------------------------------- */
+
+/* 연월차 ------------------------------------------------------- */
+#compDayOff .day_off {
+  gap: 2rem;
+}
+#compDayOff .day_off li .user_info {
+  align-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+#compDayOff .day_off li .user_info p {
+  font-size: 1.4rem;
+}
+#compDayOff .day_off li .user_info span:not(.chip) {
+  color: var(--gray-4);
+}
+#compDayOff .day_off li .detail {
+  flex-direction: column;
+  gap: 0.5rem;
 }
 /* ------------------------------------------------------- */
