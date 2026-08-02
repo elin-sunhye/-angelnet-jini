@@ -249,16 +249,18 @@ textarea {
   background: var(--blue-2);
 }
 
-/* 저장, 로그인 */
+/* 저장, 로그인, 등록 */
 .btn_save,
-.btn_signin {
+.btn_signin,
+.btn_regist {
   background: var(--navy);
   border: 0.1rem solid var(--navy);
   color: var(--white);
 }
 
 .btn_save:hover,
-.btn_signin:hover {
+.btn_signin:hover,
+.btn_regist:hover {
   background: var(--blue-2);
   color: var(--navy);
 }
@@ -299,9 +301,10 @@ textarea {
   color: var(--green);
 }
 
-/* 반려, 취소 */
+/* 반려, 취소, 삭제 */
 .btn_reject,
-.btn_cancel {
+.btn_cancel,
+.btn_del {
   background: var(--red);
   border: 0.1rem solid var(--red);
   color: var(--white);
@@ -313,14 +316,16 @@ textarea {
   color: var(--red);
 }
 
-/* 보류 */
-.btn_hold {
+/* 보류, 수정 */
+.btn_hold,
+.btn_modify {
   background: var(--yellow);
   border: 0.1rem solid var(--yellow);
   color: var(--white);
 }
 
-.btn_hold:hover {
+.btn_hold:hover,
+.btn_modify:hover {
   background: var(--yellow-02);
   color: var(--yellow);
 }

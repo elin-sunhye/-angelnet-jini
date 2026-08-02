@@ -88,12 +88,14 @@
 .title span {
   display: inline-block;
   width: 1.6rem;
+  margin-bottom: 0.4rem;
 }
 .cont_box {
   flex-direction: column;
   gap: 1rem;
   width: 100%;
   padding: 1rem;
+  border: 0.1rem solid var(--gray-2);
   background-color: var(--white);
 }
 .plan li {
@@ -110,7 +112,6 @@
 
 /* 아코디언 공통 (전체 일정, 공개 톡방) ------------------------------------------------------- */
 .accordion {
-  border: 0.1rem solid var(--gray-2);
   border-top: 0;
   border-bottom: 0;
 }

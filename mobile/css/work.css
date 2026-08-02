@@ -1,0 +1,12 @@
+#container {
+  flex-direction: column;
+  gap: 3rem;
+}
+#container .title_wrap {
+  justify-content: space-between;
+  align-items: center;
+}
+#container .title_wrap .title,
+#container .title_wrap .btn_box {
+  margin: 0;
+}

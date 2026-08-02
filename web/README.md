@@ -1,4 +1,4 @@
-# 컴포넌트화 (comp_style.css)
+# WEB 컴포넌트 스타일 (/web/css/comp_style.css)
 
 ## comp-header
 
@@ -10,7 +10,7 @@
 
 ## comp-tab
 
-# 컴포넌트화가 어려운 항목 기본 레이아웃 (common.css)
+# 컴포넌트화가 어려운 항목 기본 레이아웃 스타일 (/web/css/common.css)
 
 ## 인풋
 
@@ -74,3 +74,12 @@
   <div class="tab_content" data-tab-content="01"></div>
   <div class="tab_content" data-tab-content="02"></div>
 </div>
+
+<!-- 기안서 공통 -->
+<td>
+<!-- 기안서 등록 시 입력 위치 -->
+  <div class="inp_box">
+    <input type="text" name="ceo" title="대표자" />
+  </div>
+  <p></p> <!-- 기안서 읽기 전용 텍스트 위치 -->
+</td>
