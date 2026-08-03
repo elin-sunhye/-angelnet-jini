@@ -424,9 +424,10 @@ textarea {
   color: var(--gray-5);
   background-color: var(--gray-2);
 }
-/* 결재중, 반차 */
+/* 결재중, 반차, 상담 */
 .chip.ing,
-.chip.half_day_off {
+.chip.half_day_off,
+.chip.consulting {
   color: var(--green-04);
   background-color: var(--green-05);
 }

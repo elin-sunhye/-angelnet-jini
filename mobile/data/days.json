@@ -1,0 +1,29 @@
+{
+  "tabs": [
+    {
+      "id": "01",
+      "name": "MON",
+      "number": "13"
+    },
+    {
+      "id": "02",
+      "name": "TUE",
+      "number": "14"
+    },
+    {
+      "id": "03",
+      "name": "WED",
+      "number": "15"
+    },
+    {
+      "id": "04",
+      "name": "THU",
+      "number": "16"
+    },
+    {
+      "id": "05",
+      "name": "FRI",
+      "number": "17"
+    }
+  ]
+}

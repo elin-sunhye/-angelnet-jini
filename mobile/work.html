@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/work.css" />
     <script src="./js/jquery.3.1.1.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/work.js"></script>
   </head>
   <body>
     <!-- 헤더 컴포넌트 -->
@@ -28,6 +29,18 @@
             <button type="button" class="btn_modify">수정</button>
             <button type="button" class="btn_del">삭제</button>
           </div>
+        </div>
+
+        <!-- 텝 컴포넌트 -->
+        <div id="compTab" data-tab-src="./data/days.json"></div>
+
+        <!-- 탭 내용 -->
+        <div class="tab_content_wrap">
+          <div class="tab_content" data-tab-content="01"></div>
+          <div class="tab_content" data-tab-content="02"></div>
+          <div class="tab_content" data-tab-content="03"></div>
+          <div class="tab_content" data-tab-content="04"></div>
+          <div class="tab_content" data-tab-content="05"></div>
         </div>
       </div>
     </div>

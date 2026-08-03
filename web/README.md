@@ -67,7 +67,7 @@
 ## 탭
 
 <!-- 텝 컴포넌트 -->
-<div id="compTab"></div>
+<div id="compTab" data-tab-src=""></div>
 
 <!-- 탭 내용 -->
 <div class="tab_content_wrap">

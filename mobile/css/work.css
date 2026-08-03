@@ -1,6 +1,6 @@
 #container {
   flex-direction: column;
-  gap: 3rem;
+  gap: 0.5rem;
 }
 #container .title_wrap {
   justify-content: space-between;
@@ -9,4 +9,108 @@
 #container .title_wrap .title,
 #container .title_wrap .btn_box {
   margin: 0;
+}
+
+#container .tab_content_wrap {
+  overflow-y: auto;
+}
+#container .tab_content_wrap .cont_list {
+  flex-direction: column;
+  gap: 0.5rem;
+}
+#container .tab_content_wrap .cont_list li.cont_box {
+  gap: 0;
+  cursor: pointer;
+}
+#container .tab_content_wrap .cont_list li.cont_box div {
+  gap: 0.6rem;
+}
+#container .tab_content_wrap .cont_list li.cont_box div .time {
+  display: inline-flex;
+  width: 3rem;
+  font-size: 1rem;
+  text-align: center;
+}
+#container .tab_content_wrap .cont_list li.cont_box div p {
+  flex: 1;
+}
+#container .tab_content_wrap .cont_list li.cont_box div .time_bar {
+  justify-content: center;
+  align-items: center;
+}
+#container .tab_content_wrap .cont_list li.cont_box div .time_bar::before {
+  content: '';
+  display: inline-block;
+  width: 0.2rem;
+  height: 100%;
+  background-color: var(--black);
+}
+#container .tab_content_wrap .cont_list li.cont_box div .time_bar + p {
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+  font-size: 1rem;
+  color: var(--muted-02);
+}
+#container .tab_content_wrap .cont_list li.cont_box div .time_bar + p span {
+  display: inline-block;
+  width: 0.5rem;
+  height: auto;
+}
+#container
+  .tab_content_wrap
+  .cont_list
+  li.cont_box
+  div
+  .time_bar
+  + p
+  span
+  img:last-of-type {
+  display: none;
+}
+
+#container .tab_content_wrap .cont_list li.cont_box.active {
+  background-color: var(--primary);
+}
+#container .tab_content_wrap .cont_list li.cont_box.active * {
+  color: var(--white) !important;
+}
+#container .tab_content_wrap .cont_list li.cont_box.active .chip {
+  background-color: var(--white);
+}
+#container .tab_content_wrap .cont_list li.cont_box.active .chip.visit {
+  color: var(--primary) !important;
+}
+#container .tab_content_wrap .cont_list li.cont_box.active .chip.consulting {
+  color: var(--green-05) !important;
+}
+#container
+  .tab_content_wrap
+  .cont_list
+  li.cont_box.active
+  div
+  .time_bar::before {
+  background-color: var(--white);
+}
+#container
+  .tab_content_wrap
+  .cont_list
+  li.cont_box.active
+  div
+  .time_bar
+  + p
+  span
+  img:first-of-type {
+  display: none;
+}
+#container
+  .tab_content_wrap
+  .cont_list
+  li.cont_box.active
+  div
+  .time_bar
+  + p
+  span
+  img:last-of-type {
+  display: inline-block;
 }

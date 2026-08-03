@@ -84,8 +84,7 @@ async function loadNavData() {
 
   const data = await response.json();
 
-  if (!Array.isArray(data))
-    throw new Error(`${dataSrc}가 배열이 아닙니다.`);
+  if (!Array.isArray(data)) throw new Error(`${dataSrc}가 배열이 아닙니다.`);
 
   renderNav(data, '#compNav nav ul');
 }
@@ -197,14 +196,14 @@ async function loadTabData(compTab) {
 
   const data = await response.json();
 
-  if (!Array.isArray(data.menu))
-    throw new Error(`${dataSrc}의 menu가 배열이 아닙니다.`);
+  if (!Array.isArray(data.tabs))
+    throw new Error(`${dataSrc}의 tabs가 배열이 아닙니다.`);
 
-  renderTab(compTab, data.menu);
+  renderTab(compTab, data.tabs);
 }
 
 // 탭 버튼 출력
-function renderTab(compTab, menu) {
+function renderTab(compTab, tabs) {
   const tabList = compTab.querySelector('.tab_list');
 
   if (!tabList) {
@@ -219,7 +218,7 @@ function renderTab(compTab, menu) {
 
   tabList.innerHTML = '';
 
-  menu.forEach((item, index) => {
+  tabs.forEach((item, index) => {
     const itemId = String(item.id);
 
     const isActive = currentTabId
@@ -235,16 +234,17 @@ function renderTab(compTab, menu) {
         class="${isActive ? 'active' : ''}"
         data-tab-id="${itemId}"
       >
-        <button type="button" class="tab_btn">
+        <button type="button" class="tab_btn flex">
           ${item.name}
+          <span>${item.number}</span>
         </button>
       </li>
     `;
   });
 
   // URL tab 값이 잘못됐으면 첫 번째 탭 선택
-  if (!activeTabId && menu.length > 0) {
-    activeTabId = String(menu[0].id);
+  if (!activeTabId && tabs.length > 0) {
+    activeTabId = String(tabs[0].id);
 
     const firstTab = tabList.querySelector('li');
 
