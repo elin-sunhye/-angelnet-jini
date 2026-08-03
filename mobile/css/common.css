@@ -311,7 +311,8 @@ textarea {
 }
 
 .btn_reject:hover,
-.btn_cancel:hover {
+.btn_cancel:hover,
+.btn_del:hover {
   background: var(--red-02);
   color: var(--red);
 }
