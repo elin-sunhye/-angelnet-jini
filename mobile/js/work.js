@@ -12,9 +12,9 @@ async function loadWorkList() {
 
   if (!targets.length) return;
 
-  const response = await fetch('work/comp-wrok-list.html');
+  const response = await fetch('work/work-list.html');
 
-  if (!response.ok) throw new Error('comp-wrok-list.html 로드 실패');
+  if (!response.ok) throw new Error('work-list.html 로드 실패');
 
   const template = await response.text();
 

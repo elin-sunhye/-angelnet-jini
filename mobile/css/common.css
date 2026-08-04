@@ -118,7 +118,6 @@ table .td_insert {
   background-color: var(--yellow-03) !important;
 }
 
-.select_box,
 input:not(.inp_box input),
 textarea,
 textarea:hover,
@@ -176,7 +175,7 @@ table tbody tr.tr_insert td button:active,
 [class*=' popup_'] .pop_cont button:hover,
 [class*=' popup_'] .pop_cont button:focus,
 [class*=' popup_'] .pop_cont button:active {
-  border: 0.1rem solid var(--gray-3);
+  background-color: var(--white);
 }
 table tbody tr.tr_insert td .select_box,
 table tbody tr.tr_insert td .inp_box {
@@ -186,11 +185,16 @@ table tbody tr.tr_insert td .inp_box {
 .select_box,
 input:not(.inp_box input),
 textarea {
-  padding: 1rem;
+  padding: 0.5rem;
+}
+.select_box,
+.inp_box,
+textarea {
+  background-color: var(--white);
 }
 
 .select_box {
-  padding-right: 1rem;
+  padding-right: 0.5rem;
 }
 .select_box select {
   width: 100%;
@@ -202,7 +206,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .inp_box input {
   width: 100%;
@@ -395,8 +399,6 @@ textarea {
 .search_biz_nm_box {
   justify-content: space-between;
   align-items: center;
-  border: 0.1rem solid var(--gray-3);
-  padding: 0 1rem;
 }
 .search_biz_nm_box .inp_box,
 .search_biz_nm_box button {
@@ -404,6 +406,7 @@ textarea {
 }
 .search_biz_nm_box button {
   width: fit-content;
+  height: 1.5rem !important;
 }
 
 /* 스크롤 박스 */

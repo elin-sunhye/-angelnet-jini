@@ -373,7 +373,6 @@ textarea {
   justify-content: space-between;
   align-items: center;
   border: 0.1rem solid var(--gray-3);
-  padding: 0 1rem;
 }
 .search_biz_nm_box .inp_box,
 .search_biz_nm_box button {
@@ -381,6 +380,7 @@ textarea {
 }
 .search_biz_nm_box button {
   width: fit-content;
+  height: 1.5rem !important;
 }
 
 /* 스크롤 박스 */

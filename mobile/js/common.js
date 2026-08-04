@@ -51,6 +51,24 @@ async function loadHeader() {
   const data = await response.text();
 
   target.innerHTML = data;
+
+  // data-title이 있으면 로고 이미지 대신 텍스트로 교체 + 설정 버튼 제거
+  const title = target.dataset.title;
+
+  if (title) {
+    const h1 = target.querySelector('header h1');
+    const button = target.querySelector('header button');
+
+    if (h1)
+      h1.innerHTML = `
+      <button type="button" onclick="history.back()">
+        <img src="./img/ico-back.svg" alt="뒤로가기 아이콘"/>
+      </button>
+      <p>${title}</p>
+    `;
+
+    if (button) button.remove();
+  }
 }
 
 // 네이게이션 컴포넌트 -------------------------------------------------------
@@ -112,6 +130,16 @@ function renderNav(menu, targetSelector = '#compNav nav ul') {
   });
 }
 
+// 메뉴 페이지와 함께 active 처리할 하위 페이지 목록
+const RELATED_PAGES = {
+  'work.html': ['work.html', 'request-work.html', 'modify-work.html'],
+  'approval.html': [
+    'approval.html',
+    'request-approval.html',
+    'modify-approval.html',
+  ],
+};
+
 // 현재 페이지에 맞는 메뉴 active 처리
 function setActiveMenu() {
   const currentPage = window.location.pathname.split('/').pop();
@@ -133,7 +161,9 @@ function setActiveMenu() {
 
     if (!menuItem) return;
 
-    if (currentPage === linkPage) {
+    const relatedPages = RELATED_PAGES[linkPage] || [linkPage];
+
+    if (relatedPages.includes(currentPage)) {
       menuItem.classList.add('active');
       const img = menuItem.querySelector('img');
 
@@ -150,13 +180,6 @@ function setActiveMenu() {
         }
       }
       return;
-    }
-
-    if (
-      currentPage.includes('request') &&
-      menuItem.textContent.trim().includes('전자결재')
-    ) {
-      menuItem.classList.add('active');
     }
   });
 }
