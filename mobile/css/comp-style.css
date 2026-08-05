@@ -146,6 +146,25 @@
 }
 /* ------------------------------------------------------- */
 
+/* 업체 팝업 리스트 ------------------------------------------------------- */
+.popup_search_biz .pop_cont .inp_box {
+  height: 4rem;
+}
+.popup_search_biz .pop_cont .scroll_box {
+  height: 50rem;
+}
+.popup_search_biz .pop_cont .table_biz {
+  margin-top: 1rem;
+}
+.popup_search_biz .pop_cont .table_biz tbody tr td {
+  cursor: pointer;
+}
+.popup_search_biz .pop_cont .table_biz tbody tr.active {
+  color: var(--white);
+  background-color: var(--blue-4);
+}
+/* ------------------------------------------------------- */
+
 /* MY 일정 ------------------------------------------------------- */
 .title {
   align-items: center;

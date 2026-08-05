@@ -125,16 +125,31 @@
 
 /* 등록, 수정 ------------------------------------------------------- */
 #container.request form .row:not(:last-of-type),
-#container.modify form.row:not(:last-of-type) {
+#container.modify form .row:not(:last-of-type) {
   margin-bottom: 1rem;
 }
 #container.request form .row.flex,
-#container.modify form.row.flex {
+#container.modify form .row.flex {
   gap: 0.5rem;
 }
+#container.request form .row.flex .col,
+#container.modify form .row.flex .col {
+  flex: 1;
+}
 #container.request form .row .col label,
-#container.modify form.row .col label {
+#container.modify form .row .col label {
   display: inline-block;
   margin-bottom: 0.5rem;
+}
+#container.request form .row .inp_box,
+#container.modify form .row .inp_box,
+#container.request form .row .select_box,
+#container.modify form .row .select_box {
+  height: 2.4rem;
+}
+#container.request form .row textarea,
+#container.modify form .row textarea {
+  min-width: 100%;
+  max-width: 100%;
 }
 /* ------------------------------------------------------- */

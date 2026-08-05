@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', async () => {
   try {
-    await loadWorkList();
+    await Promise.all([loadWorkList(), loadPopupBizList()]);
+
+    initBizPopup();
   } catch (error) {
     console.error('컴포넌트 로드 오류:', error);
   }
@@ -24,6 +26,42 @@ async function loadWorkList() {
 
   // 컴포넌트가 들어간 후 요일별 데이터 로드
   await loadWorkListData(targets);
+}
+
+// 업체 팝업 컴포넌트
+async function loadPopupBizList() {
+  const response = await fetch('comp-popup-biz-list.html');
+
+  if (!response.ok) throw new Error('comp-popup-biz-list.html 로드 실패');
+
+  const data = await response.text();
+  document.getElementById('compPopupBizList').innerHTML = data;
+}
+
+// 업체 검색 팝업
+function initBizPopup() {
+  const popup = document.querySelector('.popup_search_biz');
+
+  if (!popup) {
+    console.error('업체 검색 팝업을 찾을 수 없습니다.');
+    return;
+  }
+
+  document.addEventListener('click', (event) => {
+    // 업체 검색 팝업 열기
+    if (event.target.closest('.btn_open_popup')) {
+      popup.classList.remove('closed');
+      return;
+    }
+
+    // 업체 검색 팝업 닫기
+    if (
+      event.target.closest('.btn_closed') ||
+      event.target.closest('.btn_selected_biz_nm')
+    ) {
+      popup.classList.add('closed');
+    }
+  });
 }
 
 // 탭별 업무 리스트 동적 데이터 로드
