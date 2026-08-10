@@ -1,0 +1,134 @@
+{
+  "01": [
+    {
+      "title": "대성 물류센터 재고 관리 시스템 점검",
+      "chip": "new",
+      "type": "loan"
+    },
+    {
+      "title": "동양 식품 원재료 입고 확인",
+      "chip": "suspense",
+      "type": "new-vendor"
+    },
+    {
+      "title": "미래 유통 정산 내역 검토",
+      "chip": "suspense",
+      "type": "new-vendor"
+    },
+    {
+      "title": "한솔 갈비 지원금 수금 예정 1,000,000",
+      "chip": "suspense",
+      "type": "loan"
+    },
+    {
+      "title": "서일 산업 미수금 수금 예정 500,000",
+      "chip": "suspense",
+      "type": "equipment"
+    },
+    {
+      "title": "신성 산업 설비 유지보수 협의",
+      "chip": "approve",
+      "type": "new-vendor"
+    },
+    {
+      "title": "우성 식자재 납품 계약 체결",
+      "chip": "reject",
+      "type": "equipment"
+    },
+    {
+      "title": "정일 유통 반품 처리 협의",
+      "chip": "reject",
+      "type": "loan"
+    },
+    {
+      "title": "주간 업무 마감 보고",
+      "chip": "reject",
+      "type": "loan"
+    },
+    {
+      "title": "가경 물산 발주 내역 확인",
+      "chip": "hold",
+      "type": "new-vendor"
+    },
+    {
+      "title": "동해 수산 미수금 수금 예정 700,000",
+      "chip": "hold",
+      "type": "loan"
+    },
+    {
+      "title": "한빛 전자 납품 계약 협의",
+      "chip": "hold",
+      "type": "equipment"
+    }
+  ],
+  "02": [
+    {
+      "title": "대성 물류센터 재고 관리 시스템 점검",
+      "chip": "new",
+      "type": "loan"
+    }
+  ],
+  "03": [
+    {
+      "title": "동양 식품 원재료 입고 확인",
+      "chip": "suspense",
+      "type": "new-vendor"
+    },
+    {
+      "title": "미래 유통 정산 내역 검토",
+      "chip": "suspense",
+      "type": "new-vendor"
+    },
+    {
+      "title": "한솔 갈비 지원금 수금 예정 1,000,000",
+      "chip": "suspense",
+      "type": "loan"
+    },
+    {
+      "title": "서일 산업 미수금 수금 예정 500,000",
+      "chip": "suspense",
+      "type": "equipment"
+    }
+  ],
+  "04": [
+    {
+      "title": "신성 산업 설비 유지보수 협의",
+      "chip": "approve",
+      "type": "new-vendor"
+    }
+  ],
+  "05": [
+    {
+      "title": "우성 식자재 납품 계약 체결",
+      "chip": "reject",
+      "type": "equipment"
+    },
+    {
+      "title": "정일 유통 반품 처리 협의",
+      "chip": "reject",
+      "type": "loan"
+    },
+    {
+      "title": "주간 업무 마감 보고",
+      "chip": "reject",
+      "type": "loan"
+    }
+  ],
+  "06": [
+    {
+      "title": "가경 물산 발주 내역 확인",
+      "chip": "hold",
+      "type": "new-vendor"
+    },
+    {
+      "title": "동해 수산 미수금 수금 예정 700,000",
+      "chip": "hold",
+      "type": "loan"
+    },
+    {
+      "title": "한빛 전자 납품 계약 협의",
+      "chip": "hold",
+      "type": "equipment"
+    }
+  ]
+}

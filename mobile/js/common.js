@@ -130,13 +130,29 @@ function renderNav(menu, targetSelector = '#compNav nav ul') {
   });
 }
 
+// 칩 공통 코드 -------------------------------------------------------
+const CHIP_LABELS = {
+  new: '신규',
+  suspense: '미결',
+  approve: '완결',
+  reject: '반려',
+  hold: '보류',
+  visit: '방문',
+  consulting: '상담',
+};
+
+function getChipLabel(chip) {
+  return CHIP_LABELS[chip] ?? chip;
+}
+
 // 메뉴 페이지와 함께 active 처리할 하위 페이지 목록
 const RELATED_PAGES = {
   'work.html': ['work.html', 'request-work.html', 'modify-work.html'],
   'approval.html': [
     'approval.html',
-    'request-approval.html',
-    'modify-approval.html',
+    'request-equipment.html',
+    'request-loan.html',
+    'request-new-vendor.html',
   ],
 };
 

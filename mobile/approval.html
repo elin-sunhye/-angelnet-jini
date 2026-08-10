@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>결재</title>
     <link rel="stylesheet" href="./css/comp-style.css" />
+    <link rel="stylesheet" href="./css/approval.css" />
     <script src="./js/jquery.3.1.1.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/approval.js"></script>
   </head>
   <body>
     <!-- 헤더 컴포넌트 -->
@@ -14,7 +16,20 @@
 
     <div class="wrap flex">
       <!-- 페이지 내용 -->
-      <div id="container" class="flex"></div>
+      <div id="container" class="flex">
+        <!-- 텝 컴포넌트 -->
+        <div id="compTab" data-tab-src="./data/result-tp.json"></div>
+
+        <!-- 탭 내용 -->
+        <div class="tab_content_wrap">
+          <div class="tab_content" data-tab-content="01"></div>
+          <div class="tab_content" data-tab-content="02"></div>
+          <div class="tab_content" data-tab-content="03"></div>
+          <div class="tab_content" data-tab-content="04"></div>
+          <div class="tab_content" data-tab-content="05"></div>
+          <div class="tab_content" data-tab-content="06"></div>
+        </div>
+      </div>
     </div>
 
     <!-- 네비게이션 컴포넌트 -->

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기자재 지급/회수 등록</title>
+    <link rel="stylesheet" href="./css/comp-style.css" />
+    <link rel="stylesheet" href="./css/approval.css" />
+    <script src="./js/jquery.3.1.1.js"></script>
+    <script src="./js/common.js"></script>
+    <script src="./js/approval.js"></script>
+  </head>
+  <body>
+    <!-- 헤더 컴포넌트 -->
+    <div id="compHeader" data-title="기안서 등록"></div>
+
+    <div class="wrap flex">
+      <!-- 페이지 내용 -->
+      <div id="container" class="request flex">
+        <div class="title_wrap flex">
+          <h6 class="title flex">기자재 지급/회수 기안서</h6>
+          <div class="btn_box flex">
+            <button type="button" class="btn_regist">결재</button>
+            <button
+              type="button"
+              class="btn_modify"
+              onclick="location.href = './approval.html'"
+            >
+              등록
+            </button>
+            <button type="button" class="btn_del">삭제</button>
+          </div>
+        </div>
+
+        <!-- 등록 폼 -->
+        <form>
+          <div class="row flex">
+            <div class="col">
+              <label for="date">날짜</label>
+              <div class="inp_box">
+                <input type="date" id="date" name="date" />
+              </div>
+            </div>
+            <div class="col">
+              <label for="category">구분</label>
+              <div class="select_box">
+                <select name="category" title="구분 선택">
+                  <option value="1" selected>지급</option>
+                  <option value="2">회수</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="title">제목</label>
+              <div class="inp_box">
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="제목을 입력하세요"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="biz">업체</label>
+              <div class="inp_box search_biz_nm_box flex">
+                <input type="text" name="bizNm" title="업체명" readonly />
+                <button
+                  type="button"
+                  class="btn_open_popup"
+                  aria-label="팝업 열기"
+                >
+                  <img src="./img/ico-search.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="formCont">기안서 내용</label>
+              <textarea name="formCont"></textarea>
+            </div>
+          </div>
+
+          <div class="row flex">
+            <div class="col">
+              <label for="requestDate">요청 날짜</label>
+              <div class="inp_box">
+                <input type="date" id="requestDate" name="date" />
+              </div>
+            </div>
+            <div class="col">
+              <label for="cost">금액</label>
+              <div class="inp_box">
+                <input type="number" id="cost" name="cost" min="0" />
+              </div>
+            </div>
+          </div>
+
+          <div class="row flex">
+            <div class="col">
+              <label for="payMethod">지출 방법</label>
+              <div class="select_box">
+                <select name="payMethod" title="지출 방법 선택">
+                  <option value="1" selected>현금</option>
+                  <option value="2">카드</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="remark">기타 내용</label>
+              <textarea name="remark"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="opinion">기안자 견해 내용</label>
+              <textarea name="opinion"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <input type="file" id="cost" name="cost" min="0" />
+            </div>
+          </div>
+        </form>
+
+        <!-- 팝업 -->
+        <div id="compPopupBizList"></div>
+      </div>
+    </div>
+
+    <!-- 네비게이션 컴포넌트 -->
+    <div id="compNav"></div>
+  </body>
+</html>

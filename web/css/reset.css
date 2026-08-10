@@ -127,5 +127,5 @@ fieldset {
 
 /* textarea 크기 조절 기본값 */
 textarea {
-  resize: none;
+  resize: both;
 }
