@@ -121,7 +121,7 @@ function renderApprovalSection({ type, title, href }, list) {
         .filter((item) => item.type == type)
         .map(
           (item) => `
-            <li class="cont_box flex" onClick="location.href = './modify-${item.type}.html'">
+            <li class="cont_box flex" onClick="location.href = './detail-${item.type}.html'">
               <span class="chip ${item.chip}">${getChipLabel(item.chip)}</span>
               <p>${item.title}</p>
             </li>

@@ -153,6 +153,12 @@ const RELATED_PAGES = {
     'request-equipment.html',
     'request-loan.html',
     'request-new-vendor.html',
+    'modify-equipment.html',
+    'modify-loan.html',
+    'modify-new-vendor.html',
+    'detail-equipment.html',
+    'detail-loan.html',
+    'detail-new-vendor.html',
   ],
 };
 

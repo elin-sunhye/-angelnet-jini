@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>기자재 지급/회수 수정</title>
+    <title>기자재 지급/회수 상세</title>
     <link rel="stylesheet" href="./css/comp-style.css" />
     <link rel="stylesheet" href="./css/approval.css" />
     <script src="./js/jquery.3.1.1.js"></script>
@@ -12,21 +12,20 @@
   </head>
   <body>
     <!-- 헤더 컴포넌트 -->
-    <div id="compHeader" data-title="기안서 수정"></div>
+    <div id="compHeader" data-title="기안서 상세"></div>
 
     <div class="wrap flex">
       <!-- 페이지 내용 -->
-      <div id="container" class="request flex">
+      <div id="container" class="detail flex">
         <div class="title_wrap flex">
           <h6 class="title flex">기자재 지급/회수 기안서</h6>
           <div class="btn_box flex">
-            <button type="button" class="btn_regist">결재</button>
             <button
               type="button"
               class="btn_modify"
-              onclick="location.href = './approval.html'"
+              onclick="location.href = './modify-equipment.html'"
             >
-              저장
+              수정
             </button>
             <button type="button" class="btn_del">삭제</button>
           </div>
@@ -38,7 +37,7 @@
             <div class="col flex">
               <label for="date">날짜</label>
               <div class="inp_box">
-                <input type="date" id="date" name="date" value="2026-04-03" />
+                <input type="date" id="date" name="date" value="2026-04-03" readonly />
               </div>
             </div>
             <div class="col flex">
@@ -62,6 +61,7 @@
                   name="title"
                   placeholder="제목을 입력하세요"
                   value="서일 산업 미수금 수금 예정 500,000"
+                  readonly
                 />
               </div>
             </div>
@@ -76,6 +76,7 @@
                   type="button"
                   class="btn_open_popup"
                   aria-label="팝업 열기"
+                  disabled
                 >
                   <img src="./img/ico-search.svg" alt="" />
                 </button>
@@ -86,7 +87,7 @@
           <div class="row">
             <div class="col flex">
               <label for="formCont">기안서내용</label>
-              <textarea name="formCont">기안서 내용</textarea>
+              <textarea name="formCont" readonly>기안서 내용</textarea>
             </div>
           </div>
 
@@ -94,13 +95,13 @@
             <div class="col flex">
               <label for="requestDate">요청날짜</label>
               <div class="inp_box">
-                <input type="date" id="requestDate" name="date" value="2026-04-03" />
+                <input type="date" id="requestDate" name="date" value="2026-04-03" readonly />
               </div>
             </div>
             <div class="col flex">
               <label for="cost">금액</label>
               <div class="inp_box">
-                <input type="number" id="cost" name="cost" min="0" value="13000000" />
+                <input type="number" id="cost" name="cost" min="0" value="13,000,000" readonly />
               </div>
             </div>
           </div>
@@ -120,20 +121,20 @@
           <div class="row">
             <div class="col flex">
               <label for="remark">기타내용</label>
-              <textarea name="remark">특이사항 없음</textarea>
+              <textarea name="remark" readonly>특이사항 없음</textarea>
             </div>
           </div>
 
           <div class="row">
             <div class="col flex">
               <label for="opinion">기안자견해내용</label>
-              <textarea name="opinion">미수금 회수 예정으로 정상 처리 요청드립니다.</textarea>
+              <textarea name="opinion" readonly>미수금 회수 예정으로 정상 처리 요청드립니다.</textarea>
             </div>
           </div>
 
           <div class="row">
             <div class="col">
-              <input type="file" id="cost" name="cost" min="0" />
+              <input type="file" id="cost" name="cost" min="0" disabled />
             </div>
           </div>
         </form>

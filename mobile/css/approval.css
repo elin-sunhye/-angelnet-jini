@@ -56,30 +56,37 @@
 /* ------------------------------------------------------- */
 
 /* 등록, 수정 ------------------------------------------------------- */
-#container.request form .sec_title {
+#container.request form .sec_title,
+#container.modify form .sec_title,
+#container.detail form .sec_title {
   font-size: 1.3rem;
   margin: 1.5rem 0 0.5rem;
 }
 #container.request form .row:not(:last-of-type),
-#container.modify form .row:not(:last-of-type) {
+#container.modify form .row:not(:last-of-type),
+#container.detail form .row:not(:last-of-type) {
   margin-bottom: 1rem;
 }
 #container.request form .row.flex,
-#container.modify form .row.flex {
+#container.modify form .row.flex,
+#container.detail form .row.flex {
   gap: 0.5rem;
 }
 #container.request form .row.flex .col,
-#container.modify form .row.flex .col {
+#container.modify form .row.flex .col,
+#container.detail form .row.flex .col {
   flex: 1;
 }
 #container.request form .row .col,
-#container.modify form .row .col {
+#container.modify form .row .col,
+#container.detail form .row .col {
   align-items: center;
   padding: 0 0.5rem;
   background-color: var(--white);
 }
 #container.request form .row .col label,
-#container.modify form .row .col label {
+#container.modify form .row .col label,
+#container.detail form .row .col label {
   display: inline-block;
   width: fit-content;
   height: fit-content;
@@ -88,27 +95,31 @@
 
 #container.request form .row .col .inp_box,
 #container.modify form .row .col .inp_box,
+#container.detail form .row .col .inp_box,
 #container.request form .row .col .select_box,
-#container.modify form .row .col .select_box {
+#container.modify form .row .col .select_box,
+#container.detail form .row .col .select_box {
   flex: 1;
 }
 
 #container.request form .row .col textarea,
-#container.modify form .row .col textarea {
+#container.modify form .row .col textarea,
+#container.detail form .row .col textarea {
   min-width: calc(100% - 5.5rem);
   max-width: calc(100% - 5.5rem);
 }
 
 #container.request .tip_box p,
-#container.modify .tip_box p {
+#container.modify .tip_box p,
+#container.detail .tip_box p {
   font-size: 1.4rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 #container.request .tip_box p:first-of-type,
-#container.modify .tip_box p:first-of-type {
-  
+#container.modify .tip_box p:first-of-type,
+#container.detail .tip_box p:first-of-type {
   color: var(--red);
 }
 /* ------------------------------------------------------- */
