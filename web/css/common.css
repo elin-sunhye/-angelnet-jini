@@ -43,6 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   color: var(--black);
+  word-break: keep-all;
 }
 
 .wrap {

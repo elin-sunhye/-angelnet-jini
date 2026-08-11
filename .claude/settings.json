@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"static-server.js\")",
+      "Bash(pkill -f \"chrome.exe\")",
+      "Bash(curl -sf http://127.0.0.1:8123/detail-new-vendor.html)"
+    ]
+  }
+}
