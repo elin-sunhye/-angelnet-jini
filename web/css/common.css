@@ -285,16 +285,18 @@ textarea {
   color: var(--green);
 }
 
-/* 반려, 취소 */
+/* 반려, 취소, 삭제 */
 .btn_reject,
-.btn_cancel {
+.btn_cancel,
+.btn_del {
   background: var(--red);
   border: 0.1rem solid var(--red);
   color: var(--white);
 }
 
 .btn_reject:hover,
-.btn_cancel:hover {
+.btn_cancel:hover,
+.btn_del:hover {
   background: var(--red-02);
   color: var(--red);
 }

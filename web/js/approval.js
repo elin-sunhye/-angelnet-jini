@@ -190,7 +190,19 @@ function initRequestTableCell() {
   });
 }
 
-// tr 클릭 시 active 클래스 추가
+// 좌측 리스트에서 현재 선택된 기안서 종류 반환
+function getSelectedDocType() {
+  const activeLeftRow = document.querySelector('#compLeftList tbody tr.active');
+  const label =
+    activeLeftRow?.querySelector('td:nth-child(2)')?.textContent.trim() ?? '';
+
+  if (label.includes('대여금')) return 'loan';
+  if (label.includes('신규')) return 'new-vendor';
+
+  return 'equipment';
+}
+
+// tr 클릭 시 active 클래스 추가 후 좌측에서 선택된 기안서 종류의 상세 페이지로 이동
 document.addEventListener('click', (event) => {
   const clickRow = event.target.closest('.tab_box table tbody tr');
 
@@ -198,6 +210,8 @@ document.addEventListener('click', (event) => {
     const rows = document.querySelectorAll('.tab_box table tbody tr');
     rows.forEach((row) => row.classList.remove('active'));
     clickRow.classList.add('active');
+
+    location.href = `./detail-${getSelectedDocType()}.html`;
 
     return;
   }

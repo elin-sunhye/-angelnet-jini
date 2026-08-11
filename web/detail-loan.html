@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>대여금 기안서 등록</title>
+    <title>대여금 기안서 상세</title>
     <link rel="stylesheet" href="./css/comp-style.css" />
     <link rel="stylesheet" href="./css/approval.css" />
     <script src="./js/jquery.3.1.1.js"></script>
@@ -25,15 +25,14 @@
         <!-- 우 -->
         <div class="contants">
           <div class="btn_box flex">
-            <button type="button" class="btn_select">결재</button>
-            <button type="button" class="btn_save">저장</button>
             <button
               type="button"
-              class="btn_reject"
-              onclick="location.href = './approval.html'"
+              class="btn_modify"
+              onclick="location.href = './modify-loan.html'"
             >
-              취소
+              수정
             </button>
+            <button type="button" class="btn_del">삭제</button>
           </div>
 
           <!-- 기안서 -->
@@ -66,6 +65,7 @@
                           type="button"
                           class="btn_open_popup"
                           aria-label="팝업 열기"
+                          disabled
                         >
                           <img src="./img/ico-search.svg" alt="" />
                         </button>
@@ -76,7 +76,7 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="text" name="ceo" title="대표자" value="김철수" />
+                        <input type="text" name="ceo" title="대표자" value="김철수" readonly />
                       </div>
                     </td>
                   </tr>
@@ -86,7 +86,13 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="text" name="bizNm" title="사업자번호" value="1234567890" />
+                        <input
+                          type="text"
+                          name="bizNm"
+                          title="사업자번호"
+                          value="1234567890"
+                          readonly
+                        />
                       </div>
                     </td>
                     <th>
@@ -94,7 +100,13 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="text" name="phoneNm" title="전화번호" value="0212345678" />
+                        <input
+                          type="text"
+                          name="phoneNm"
+                          title="전화번호"
+                          value="0212345678"
+                          readonly
+                        />
                       </div>
                     </td>
                   </tr>
@@ -109,6 +121,7 @@
                           name="addr"
                           title="주소"
                           value="서울특별시 강남구 테헤란로 123"
+                          readonly
                         />
                       </div>
                     </td>
@@ -117,7 +130,7 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="text" name="response" title="담당자" value="정대리" />
+                        <input type="text" name="response" title="담당자" value="정대리" readonly />
                       </div>
                     </td>
                   </tr>
@@ -138,7 +151,7 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="date" name="" title="최종수금일" value="2026-07-01" />
+                        <input type="date" name="lastCollectDate" title="최종수금일" value="2026-07-01" readonly />
                       </div>
                     </td>
                     <th>
@@ -146,7 +159,7 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="date" name="" title="최종거래일" value="2026-07-05" />
+                        <input type="date" name="lastTradeDate" title="최종거래일" value="2026-07-05" readonly />
                       </div>
                     </td>
                   </tr>
@@ -156,7 +169,13 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="number" name="" title="대여잔액" value="1500000" />
+                        <input
+                          type="number"
+                          name="loanBalance"
+                          title="대여잔액"
+                          value="1500000"
+                          readonly
+                        />
                       </div>
                     </td>
                     <th>
@@ -164,7 +183,13 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="number" name="" title="대여총액" value="3000000" />
+                        <input
+                          type="number"
+                          name="loanTotal"
+                          title="대여총액"
+                          value="3000000"
+                          readonly
+                        />
                       </div>
                     </td>
                   </tr>
@@ -174,7 +199,7 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="number" name="" title="냉장고" value="1" />
+                        <input type="number" name="fridge" title="냉장고" value="1" readonly />
                       </div>
                     </td>
                     <th>
@@ -182,7 +207,7 @@
                     </th>
                     <td>
                       <div class="inp_box">
-                        <input type="number" name="" title="기타" value="0" />
+                        <input type="number" name="etc" title="기타" value="0" readonly />
                       </div>
                     </td>
                   </tr>
@@ -213,12 +238,12 @@
                     <tr class="tr_insert">
                       <td>
                         <div class="inp_box">
-                          <input type="number" name="loan" title="대여금액" value="3000000" />
+                          <input type="number" name="loan" title="대여금액" value="3000000" readonly />
                         </div>
                       </td>
                       <td>
                         <div class="inp_box">
-                          <input type="date" name="date" title="날짜" value="2026-04-10" />
+                          <input type="date" name="date" title="날짜" value="2026-04-10" readonly />
                         </div>
                       </td>
                       <td>
@@ -228,6 +253,7 @@
                             name="monthlyPlan"
                             title="분납"
                             value="12"
+                            readonly
                           />
                         </div>
                       </td>
@@ -238,6 +264,7 @@
                             name="installment"
                             title="월납금액"
                             value="250000"
+                            readonly
                           />
                         </div>
                       </td>
@@ -315,7 +342,7 @@
 
             <div class="remark">
               <p>기안자 의견</p>
-              <textarea>대여금 상환 계획에 따라 정상 진행 중입니다.</textarea>
+              <textarea readonly>대여금 상환 계획에 따라 정상 진행 중입니다.</textarea>
             </div>
           </div>
         </div>

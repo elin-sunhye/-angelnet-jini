@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>신규 기안서 등록</title>
+    <title>신규 기안서 상세</title>
     <link rel="stylesheet" href="./css/comp-style.css" />
     <link rel="stylesheet" href="./css/approval.css" />
     <script src="./js/jquery.3.1.1.js"></script>
@@ -25,15 +25,14 @@
         <!-- 우 -->
         <div class="contants">
           <div class="btn_box flex">
-            <button type="button" class="btn_select">결재</button>
-            <button type="button" class="btn_save">저장</button>
             <button
               type="button"
-              class="btn_reject"
-              onclick="location.href = './approval.html'"
+              class="btn_modify"
+              onclick="location.href = './modify-new-vendor.html'"
             >
-              취소
+              수정
             </button>
+            <button type="button" class="btn_del">삭제</button>
           </div>
 
           <!-- 기안서 -->
@@ -61,7 +60,7 @@
                   </th>
                   <td colspan="2" class="td_insert">
                     <div class="inp_box">
-                      <input type="date" name="date" title="날짜" value="2026-04-03" />
+                      <input type="date" name="date" title="날짜" value="2026-04-03" readonly />
                     </div>
                   </td>
                   <th>
@@ -85,6 +84,7 @@
                         name="title"
                         title="제목"
                         value="동양 식품 원재료 입고 확인"
+                        readonly
                       />
                     </div>
                   </td>
@@ -115,12 +115,13 @@
                   <td colspan="4">
                     <div class="search_pop_up flex">
                       <div class="inp_box">
-                        <input type="number" name="bizNum" title="사업자번호" value="01" />
+                        <input type="number" name="bizNum" title="사업자번호" value="01" readonly />
                       </div>
                       <button
                         type="button"
                         class="btn_open_popup btn_biz_check"
                         aria-label="팝업 열기"
+                        disabled
                       >
                         휴폐업 검색
                       </button>
@@ -131,13 +132,13 @@
                   <th><p>업태</p></th>
                   <td colspan="2">
                     <div class="inp_box">
-                      <input type="text" name="bizType" title="업태" value="유흥" />
+                      <input type="text" name="bizType" title="업태" value="유흥" readonly />
                     </div>
                   </td>
                   <th><p>종목</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="text" name="bizItem" title="종목" value="호프, 경양식" />
+                      <input type="text" name="bizItem" title="종목" value="호프, 경양식" readonly />
                     </div>
                   </td>
                   <th><p>업장전화번호</p></th>
@@ -148,6 +149,7 @@
                         name="bizNum"
                         title="업장전화번호"
                         value="0212345678"
+                        readonly
                       />
                     </div>
                   </td>
@@ -159,6 +161,7 @@
                         name="bizFaxNum"
                         title="FAX전화번호"
                         value="0212345679"
+                        readonly
                       />
                     </div>
                   </td>
@@ -173,12 +176,14 @@
                           name="addr"
                           title="주소"
                           value="서울특별시 강남구 테헤란로 123"
+                          readonly
                         />
                       </div>
                       <button
                         type="button"
                         class="btn_open_popup btn_addr"
                         aria-label="팝업 열기"
+                        disabled
                       >
                         주소 검색
                       </button>
@@ -187,13 +192,13 @@
                   <th><p>상세주소</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="text" name="addr2" title="상세주소" value="3층 301호" />
+                      <input type="text" name="addr2" title="상세주소" value="3층 301호" readonly />
                     </div>
                   </td>
                   <th><p>층수</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="number" name="step" title="층수" value="3" />
+                      <input type="number" name="step" title="층수" value="3" readonly />
                     </div>
                   </td>
                 </tr>
@@ -201,7 +206,7 @@
                   <th><p>대표자</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="text" name="ceoNm" title="대표자" value="김철수" />
+                      <input type="text" name="ceoNm" title="대표자" value="김철수" readonly />
                     </div>
                   </td>
                   <th><p>휴대폰번호</p></th>
@@ -212,6 +217,7 @@
                         name="ceoPhoneNum"
                         title="대표자 휴대폰 번호"
                         value="01012345678"
+                        readonly
                       />
                     </div>
                   </td>
@@ -223,6 +229,7 @@
                         name="ceoEmail"
                         title="대표자 이메일"
                         value="ceo@matnachicken.co.kr"
+                        readonly
                       />
                     </div>
                   </td>
@@ -235,12 +242,14 @@
                           name="ceoAddr"
                           title="대표자 주소"
                           value="서울특별시 송파구 올림픽로 45"
+                          readonly
                         />
                       </div>
                       <button
                         type="button"
                         class="btn_open_popup btn_addr"
                         aria-label="팝업 열기"
+                        disabled
                       >
                         주소 검색
                       </button>
@@ -251,7 +260,7 @@
                   <th><p>실제 운영자</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="text" name="operatorNm" title="운영자" value="박영희" />
+                      <input type="text" name="operatorNm" title="운영자" value="박영희" readonly />
                     </div>
                   </td>
                   <th><p>휴대폰번호</p></th>
@@ -262,6 +271,7 @@
                         name="operatorPhoneNum"
                         title="운영자 휴대폰 번호"
                         value="01087654321"
+                        readonly
                       />
                     </div>
                   </td>
@@ -273,6 +283,7 @@
                         name="operatorEmail"
                         title="운영자 이메일"
                         value="admin@matnachicken.co.kr"
+                        readonly
                       />
                     </div>
                   </td>
@@ -285,12 +296,14 @@
                           name="operatorAddr"
                           title="운영자 주소"
                           value="서울특별시 강동구 성내로 12"
+                          readonly
                         />
                       </div>
                       <button
                         type="button"
                         class="btn_open_popup btn_addr"
                         aria-label="팝업 열기"
+                        disabled
                       >
                         주소 검색
                       </button>
@@ -301,7 +314,7 @@
                   <th><p>업장 메니저</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="text" name="managerNm" title="메니저" value="이민수" />
+                      <input type="text" name="managerNm" title="메니저" value="이민수" readonly />
                     </div>
                   </td>
                   <th><p>휴대폰번호</p></th>
@@ -312,6 +325,7 @@
                         name="managerPhoneNum"
                         title="메니저 휴대폰 번호"
                         value="01011112222"
+                        readonly
                       />
                     </div>
                   </td>
@@ -323,6 +337,7 @@
                         name="managerEmail"
                         title="메니저 이메일"
                         value="manager@matnachicken.co.kr"
+                        readonly
                       />
                     </div>
                   </td>
@@ -334,6 +349,7 @@
                         name="managerAddr"
                         title="메니저 주소"
                         value="서울특별시 강남구 역삼로 77"
+                        readonly
                       />
                     </div>
                   </td>
@@ -362,19 +378,19 @@
                   <th><p>오픈예정일</p></th>
                   <td colspan="2">
                     <div class="inp_box">
-                      <input type="date" name="openDate" title="오픈 예정일" value="2026-05-01" />
+                      <input type="date" name="openDate" title="오픈 예정일" value="2026-05-01" readonly />
                     </div>
                   </td>
                   <th><p>실평수</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="number" name="m2" title="실평수" value="35" />
+                      <input type="number" name="m2" title="실평수" value="35" readonly />
                     </div>
                   </td>
                   <th><p>테이블수</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="number" name="table" title="테이블 수" value="12" />
+                      <input type="number" name="table" title="테이블 수" value="12" readonly />
                     </div>
                   </td>
                   <th><p>월매출</p></th>
@@ -385,6 +401,7 @@
                         name="monthlySales"
                         title="월매출"
                         value="15000000"
+                        readonly
                       />
                     </div>
                   </td>
@@ -393,7 +410,7 @@
                   <th><p>주력품목</p></th>
                   <td colspan="3">
                     <div class="inp_box">
-                      <input type="text" name="item" title="주력품목" value="닭, 생닭" />
+                      <input type="text" name="item" title="주력품목" value="닭, 생닭" readonly />
                     </div>
                   </td>
                   <th><p>주력메뉴</p></th>
@@ -404,13 +421,14 @@
                         name="menu"
                         title="주력메뉴"
                         value="후라이드치킨, 양념치킨"
+                        readonly
                       />
                     </div>
                   </td>
                   <th><p>예상수익</p></th>
                   <td colspan="3">
                     <div class="inp_box">
-                      <input type="number" name="" title="예상수익" value="5000000" />
+                      <input type="number" name="cost" title="예상수익" value="5000000" readonly />
                     </div>
                   </td>
                 </tr>
@@ -422,9 +440,10 @@
                     <div class="inp_box">
                       <input
                         type="text"
-                        name=""
+                        name="supportMaterials"
                         title="지원기자재"
                         value="냉장고 1대, 냉동고 1대"
+                        readonly
                       />
                     </div>
                   </td>
@@ -433,9 +452,10 @@
                     <div class="inp_box">
                       <input
                         type="text"
-                        name=""
+                        name="supportEtc"
                         title="기타지원"
                         value="간판 제작 지원"
+                        readonly
                       />
                     </div>
                   </td>
@@ -444,7 +464,7 @@
                   <th><p>대여금</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="number" name="retalFee" title="대여금" value="3000000" />
+                      <input type="number" name="retalFee" title="대여금" value="3000000" readonly />
                     </div>
                   </td>
                   <th><p>상환횟수</p></th>
@@ -455,13 +475,14 @@
                         name="returnCount"
                         title="상환횟수"
                         value="12"
+                        readonly
                       />
                     </div>
                   </td>
                   <th><p>만기일자</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="date" name="expiredDate" title="만기일자" value="2027-04-10" />
+                      <input type="date" name="expiredDate" title="만기일자" value="2027-04-10" readonly />
                     </div>
                   </td>
                   <th><p>월상환액</p></th>
@@ -472,13 +493,14 @@
                         name="monthlyReturnFee"
                         title="월상환액"
                         value="250000"
+                        readonly
                       />
                     </div>
                   </td>
                   <th><p>결제조건</p></th>
                   <td colspan="2">
                     <div class="inp_box">
-                      <input type="text" name="" title="결제조건" value="현금" />
+                      <input type="text" name="payCondition" title="결제조건" value="현금" readonly />
                     </div>
                   </td>
                 </tr>
@@ -486,7 +508,7 @@
                   <th><p>초기지원일</p></th>
                   <td colspan="2">
                     <div class="inp_box">
-                      <input type="date" name="openDate" title="초기지원일" value="2026-04-10" />
+                      <input type="date" name="supportDate" title="초기지원일" value="2026-04-10" readonly />
                     </div>
                   </td>
                   <th colspan="2"><p>투입 비용 회수 기간(대여금 제외)</p></th>
@@ -497,19 +519,20 @@
                         name="count"
                         title="투입 비용 회수 기간(대여금 제외)"
                         value="6"
+                        readonly
                       />
                     </div>
                   </td>
                   <th><p>결제방식</p></th>
                   <td>
                     <div class="inp_box">
-                      <input type="text" name="payment" title="결제방식" value="현금" />
+                      <input type="text" name="payment" title="결제방식" value="현금" readonly />
                     </div>
                   </td>
                   <th><p>배송담당</p></th>
                   <td colspan="2">
                     <div class="inp_box">
-                      <input type="text" name="deliver" title="배송담당" value="물류1팀 정대리" />
+                      <input type="text" name="deliver" title="배송담당" value="물류1팀 정대리" readonly />
                     </div>
                   </td>
                 </tr>
@@ -542,6 +565,7 @@
                         name="beforeDomestic"
                         title="오픈 예정일"
                         value="한신유통"
+                        readonly
                       />
                     </div>
                   </td>
@@ -553,6 +577,7 @@
                         name="beforeRentalFee"
                         title="이전 대여금"
                         value="2000000"
+                        readonly
                       />
                     </div>
                   </td>
@@ -564,13 +589,14 @@
                         name="beforeSupportPd"
                         title="이전 지원품"
                         value="냉장고 1대"
+                        readonly
                       />
                     </div>
                   </td>
                   <th><p>거래루트</p></th>
                   <td colspan="2">
                     <div class="inp_box">
-                      <input type="text" name="rute" title="거래루트" value="직거래" />
+                      <input type="text" name="rute" title="거래루트" value="직거래" readonly />
                     </div>
                   </td>
                 </tr>
@@ -578,7 +604,7 @@
                   <th><p>기타</p></th>
                   <td colspan="9">
                     <div class="inp_box">
-                      <input type="text" name="beforeRemark" title="기타" value="특이사항 없음" />
+                      <input type="text" name="beforeRemark" title="기타" value="특이사항 없음" readonly />
                     </div>
                   </td>
                 </tr>
@@ -608,9 +634,10 @@
                     <div class="inp_box">
                       <input
                         type="text"
-                        name=""
+                        name="surroundingArea"
                         title="주변상권"
                         value="주변에 오피스 상권 밀집, 유동인구 많음"
+                        readonly
                       />
                     </div>
                   </td>
@@ -621,9 +648,10 @@
                     <div class="inp_box">
                       <input
                         type="text"
-                        name=""
+                        name="bizAnalysis"
                         title="업소분석"
                         value="20-30대 직장인 고객층 위주, 저녁 매출 비중 높음"
+                        readonly
                       />
                     </div>
                   </td>
@@ -634,9 +662,10 @@
                     <div class="inp_box">
                       <input
                         type="text"
-                        name=""
+                        name="remark"
                         title="거래의견"
                         value="신용도 양호, 거래 조건 협의 완료"
+                        readonly
                       />
                     </div>
                   </td>
