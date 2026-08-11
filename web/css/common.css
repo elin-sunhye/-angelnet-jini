@@ -30,6 +30,8 @@
   --yellow-04: #ffe3b4;
   --yellow-05: #fef0da;
 
+  --orange: #F5915C;
+
   --green: #22c55e;
   --green-02: #22c55e2a;
   --green-03: #a7eabf;
@@ -297,16 +299,29 @@ textarea {
   color: var(--red);
 }
 
-/* 보류 */
-.btn_hold {
+/* 보류, 수정 */
+.btn_hold,
+.btn_modify {
   background: var(--yellow);
   border: 0.1rem solid var(--yellow);
   color: var(--white);
 }
 
-.btn_hold:hover {
+.btn_hold:hover,
+.btn_modify:hover {
   background: var(--yellow-02);
   color: var(--yellow);
+}
+
+/* 휴폐업, 주소 */
+.btn_biz_check,
+.btn_addr,
+.btn_open_popup.btn_biz_check,
+.btn_open_popup.btn_addr {
+  width: 12rem !important;
+  height: 100% !important;
+  background-color: var(--orange);
+  color: var(--white);
 }
 
 [class^='popup_'],
@@ -366,20 +381,20 @@ textarea {
 }
 
 /* 업체명 팝업 클릭 버튼 + 인풋 */
-.search_biz_nm_box,
-.search_biz_nm_box * {
+.search_pop_up,
+.search_pop_up * {
   cursor: pointer;
 }
-.search_biz_nm_box {
+.search_pop_up {
   justify-content: space-between;
   align-items: center;
   border: 0.1rem solid var(--gray-3);
 }
-.search_biz_nm_box .inp_box,
-.search_biz_nm_box button {
+.search_pop_up .inp_box,
+.search_pop_up button {
   border: 0 !important;
 }
-.search_biz_nm_box button {
+.search_pop_up button {
   width: fit-content;
   height: 1.5rem !important;
 }

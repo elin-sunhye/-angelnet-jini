@@ -75,6 +75,7 @@
   img:last-of-type {
   display: none;
 }
+
 /* 일정 클릭 */
 #container .tab_content_wrap .cont_list li.cont_box.active {
   background-color: var(--primary);
@@ -136,15 +137,28 @@
 #container.modify form .row.flex .col {
   flex: 1;
 }
+#container.request form .row .col,
+#container.modify form .row .col {
+  align-items: center;
+  padding: 0 0.5rem;
+  background-color: var(--white);
+}
 #container.request form .row .col label,
 #container.modify form .row .col label {
   display: inline-block;
-  margin-bottom: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+  color: var(--muted-02);
 }
-#container.request form .row .inp_box,
-#container.modify form .row .inp_box,
-#container.request form .row .select_box,
-#container.modify form .row .select_box {
-  height: 2.4rem;
+
+#container.request form .row .col .inp_box,
+#container.modify form .row .col .inp_box,
+#container.request form .row .col .select_box,
+#container.modify form .row .col .select_box,
+#container.request form .row .col textarea,
+#container.modify form .row .col textarea {
+  min-width: calc(100% - 5.5rem);
+  max-width: calc(100% - 5.5rem);
+  flex: 1;
 }
 /* ------------------------------------------------------- */

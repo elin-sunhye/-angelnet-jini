@@ -42,6 +42,8 @@
   --yellow-04: #ffe3b4;
   --yellow-05: #fef0da;
 
+  --orange: #F5915C;
+
   --green: #22c55e;
   --green-02: #22c55e2a;
   --green-03: #a7eabf;
@@ -237,6 +239,26 @@ textarea {
   max-width: 100%;
   min-height: 8rem;
 }
+
+/* 라디오, 체크 박스 */
+.radio_box,
+.check_box {
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+.radio_box .radio_item,
+.check_box .check_item {
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+}
+.radio_box .radio_item input,
+.check_box .check_item input {
+  width: 1rem !important;
+}
+
 /* 버튼 공통 */
 .btn_box {
   justify-content: flex-end;
@@ -343,6 +365,17 @@ textarea {
   color: var(--yellow);
 }
 
+/* 휴폐업, 주소 */
+.btn_biz_check,
+.btn_addr,
+.btn_open_popup.btn_biz_check,
+.btn_open_popup.btn_addr {
+  width: 10rem !important;
+  height: 2rem !important;
+  background-color: var(--orange);
+  color: var(--white);
+}
+
 [class^='popup_'],
 [class*=' popup_'] {
   position: fixed;
@@ -383,7 +416,7 @@ textarea {
 [class*=' popup_'] .pop_cont {
   flex: 1;
   margin: 1rem 0 0.5rem;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 [class^='popup_'] .pop_bottom_btn,
 [class*=' popup_'] .pop_bottom_btn {
@@ -401,19 +434,19 @@ textarea {
 }
 
 /* 업체명 팝업 클릭 버튼 + 인풋 */
-.search_biz_nm_box,
-.search_biz_nm_box * {
+.search_pop_up,
+.search_pop_up * {
   cursor: pointer;
 }
-.search_biz_nm_box {
+.search_pop_up {
   justify-content: space-between;
   align-items: center;
 }
-.search_biz_nm_box .inp_box,
-.search_biz_nm_box button {
+.search_pop_up .inp_box,
+.search_pop_up button {
   border: 0 !important;
 }
-.search_biz_nm_box button {
+.search_pop_up button {
   width: fit-content;
   height: 1.5rem !important;
 }
@@ -435,10 +468,9 @@ textarea {
 /* 임시저장, 미결 */
 .chip.temp,
 .chip.suspense {
-  color: var(--gray-6);
   background-color: var(--gray-3);
 }
-/* 결재중, 반차, 상담 */
+/* 결재중, 반차, 상담, 신규 */
 .chip.ing,
 .chip.half_day_off,
 .chip.consulting,
@@ -463,7 +495,6 @@ textarea {
 .chip.biz_trip.actvie,
 .chip.visit.actvie {
   color: var(--primary);
-  background-color: var(--blue-6);
 }
 /* 반려, 연차 */
 .chip.reject,
@@ -473,5 +504,5 @@ textarea {
 }
 
 table tbody tr.active .chip {
-  background-color: var(--white) !important;
+  background-color: var(--white);
 }

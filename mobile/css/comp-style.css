@@ -35,11 +35,12 @@
 
 /* 헤더 ------------------------------------------------------- */
 #compHeader header {
+  position: relative;
   justify-content: space-between;
   height: 4.5rem;
   padding: 1.3rem 2rem;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.14);
   font-family: 'Gmarket';
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.14);
 }
 #compHeader header h1 {
   align-items: center;
@@ -54,8 +55,11 @@
 /* ------------------------------------------------------- */
 
 /* 네비게이션 ------------------------------------------------------- */
+#compNav nav {
+  box-shadow: 0 -4px 14px 0 rgba(0, 0, 0, 0.15);
+}
 #compNav nav ul {
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem;
   justify-content: center;
   align-items: center;
 }
